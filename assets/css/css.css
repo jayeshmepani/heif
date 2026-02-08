@@ -1,230 +1,177 @@
-
-* 
-
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
- 
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-}
-
-
-body {
-  background-color: #111;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-	
-	
-}
-
-
-
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  align-items: center;
-}
-
-header .logo {
-  font-size: 24px;
-  color: #fff;
-}
-
-header nav ul {
-  list-style-type: none;
-}
-
-header nav ul li {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.hero {
-  text-align:left;
-  padding: 90px 0px;
-	padding-left: 80px;
-  background-color: #111;
-  
-}
-
-.hero h1 {
-  font-size: 160px;
-  font-weight:10;
-	 line-height: 0.8;
-
-	
-}
-
-.hero h1 span {
-  font-size: 150px;
-  font-weight: bold;
-  color: #ccc;
-}
-
-.hero p {
-  margin-top: 20px;
-  font-size: 14px;
-	
-}
- 
-
-/* Image Hover Effect */
-.hover-image {
-  position: absolute;
-	padding-top: -1200px;
-  width: 330px;
-  height: 330px;
-  display: none;
-    /* Avoid image blocking interactions */
-}
-
-.hover-image img {
-  width: 100%;
-  height: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-/*VIDEO SHOWCASE*/
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-/* Body */
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px
+    }
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Arial', sans-serif
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center
+}
+
+header .logo {
+    font-size: 24px;
+    color: #fff
+}
+
+header nav ul {
+    list-style-type: none
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none
+}
+
+.hero {
+    text-align: left;
+    padding: 90px 0;
+    padding-left: 80px;
+    background-color: #111
+}
+
+.hero h1 {
+    font-size: 160px;
+    font-weight: 10;
+    line-height: .8
+}
+
+.hero h1 span {
+    font-size: 150px;
+    font-weight: bold;
+    color: #ccc
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 14px
+}
+
+.hover-image {
+    position: absolute;
+    padding-top: -1200px;
+    width: 330px;
+    height: 330px;
+    display: none
+}
+
+.hover-image img {
+    width: 100%;
+    height: 100%
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
+    color: #333
 }
 
-/* Header */
 .header {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 20px
 }
 
 .header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1.2rem
 }
 
-
-
-
-
-
-/* Video Showcase */
-/* General Reset */
- 
 body {
     font-family: 'Arial', sans-serif;
     background-color: #1a1a1a;
     color: #fff;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
-/* Header */
-  
 .header {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 20px
 }
 
 .header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-	text-align: center
+    text-align: center
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1.2rem
 }
 
-/* Video Showcase */
 .video-showcase {
     padding: 50px 20px;
-    background-color: #111;
+    background-color: #111
 }
 
 .video-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 30px
 }
 
 .video-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    background-color: #222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    background-color: #222
 }
 
 .video-thumbnail video {
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0
 }
 
 .play-btn {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, .8);
     border: none;
     color: #333;
     padding: 10px 20px;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 10px;
- 
-  	margin-bottom: 10px;
+    margin-bottom: 10px;
     left: 10px;
-    z-index: 10;
+    z-index: 10
 }
 
 .video-caption {
@@ -232,249 +179,140 @@ body {
     padding: 15px;
     background-color: #333;
     color: #fff;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px
 }
 
 .video-caption h3 {
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adapts to screen size */
-    gap: 20px; /* Space between video items */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px
 }
 
-
-
-
-
- 
-  
-
-
-
-
- 
-  
-
-
-
-
- 
-
-
-
-
-
-
-/* Basic Styling */
 body {
-  background-color: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
- 
-  
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0
 }
-
- 
 
 .hero1 {
-
-  padding: 40px;
-	
+    padding: 40px
 }
 
 .hero1 h1 {
-  font-size: 130px;
-  font-weight: 300;
-  line-height: 0.8;
-	
- 
+    font-size: 130px;
+    font-weight: 300;
+    line-height: .8
 }
 
 .hero1 h2 {
-  font-size: 130px;
-  font-weight: 300;
-	 line-height: 0.8;
-	
+    font-size: 130px;
+    font-weight: 300;
+    line-height: .8
 }
 
-
-
-
-#heif{
-	opacity: 30%;
+#heif {
+    opacity: 30%
 }
 
-#hei{
-	opacity: 30%;
+#hei {
+    opacity: 30%
 }
 
-
-#he{
-	opacity: 30%;
-	margin-left: 10PX;
-	
+#he {
+    opacity: 30%;
+    margin-left: 10PX
 }
 
-#h{
-	opacity: 30%;
-	margin-left: 20PX;
-	margin-bottom: 10PX;
+#h {
+    opacity: 30%;
+    margin-left: 20PX;
+    margin-bottom: 10PX
 }
 
-
-
-
-
-
-
-
-
-.hero1 h2 Span{
-  font-size: 130px;
-  font-weight: 300;
-	margin-left: 20PX;
-	 line-height: 0.8;
-	
- 
+.hero1 h2 Span {
+    font-size: 130px;
+    font-weight: 300;
+    margin-left: 20PX;
+    line-height: .8
 }
-
-
-
-
-
 
 .hero1 h2 span {
-  cursor: pointer;
-  color: #ccc;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 15px;
-	
-	
+    cursor: pointer;
+    color: #ccc;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px
 }
-
-
-
-
-
-
-
-
-
-
 
 .hero1 h1 span {
-  cursor: pointer;
-  color: #ccc;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 15px;
-	
-	
+    cursor: pointer;
+    color: #ccc;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px
 }
 
-
-
-
-
-
-
-
-
-.hero1 h2{
-  cursor: pointer;
-  color: #ccc;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 15px;
-	 
-	
-	
+.hero1 h2 {
+    cursor: pointer;
+    color: #ccc;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px
 }
 
-
-
- 
-/* Image Hover Effect */
 .hover-image {
-  position: absolute;
-	padding-top: -1200px;
-  width: 330px;
-  height: 330px;
-  display: none;
-    /* Avoid image blocking interactions */
+    position: absolute;
+    padding-top: -1200px;
+    width: 330px;
+    height: 330px;
+    display: none
 }
 
 .hover-image img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%
 }
-
-
-
-
-
-
-
-
-
-
 
 .page-title__title {
-	
-	font-size: 60px;
-	margin-bottom: 40px;
-	margin-top: 40px;
+    font-size: 60px;
+    margin-bottom: 40px;
+    margin-top: 40px
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif
 }
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns for the first row */
-    gap: 15px; /* Space between thumbnails */
-    max-width: 1200px; /* Maximum width of the container */
-    margin: auto; /* Center the container */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-		margin-top: 160px;
+    margin-top: 160px
 }
 
 .thumbnail {
     position: relative;
-    overflow: hidden; /* Hide overflow for hover effect */
+    overflow: hidden
 }
 
 .thumbnail a {
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none
 }
 
 .thumbnail img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease; /* Smooth scaling effect */
+    transition: transform .3s ease
 }
 
 .caption {
@@ -482,207 +320,118 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, .7);
     color: white;
     padding: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-/* Hover Effects */
 .thumbnail:hover img {
-    transform: scale(1.05); /* Scale up on hover */
-	filter: invert(1)
+    transform: scale(1.05);
+    filter: invert(1)
 }
 
 .thumbnail:hover .caption {
-    background-color: rgba(0, 0, 0, 0.9); /* Darken caption on hover */
+    background-color: rgba(0, 0, 0, .9)
 }
 
-/* Responsive adjustments for second row */
-@media (max-width: 800px) {
-   .portfolio-container {
-       grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
-   }
+@media (max-width:800px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr)
+    }
 }
 
-@media (max-width: 500px) {
-   .portfolio-container {
-       grid-template-columns: repeat(1, 1fr); /* One column for very small screens */
-   }
+@media (max-width:500px) {
+    .portfolio-container {
+        grid-template-columns: repeat(1, 1fr)
+    }
 }
 
-
-
-
-
-
-  
-
-
-
-
- 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 
-
-
-/* 19.images main
---------------------------------------------------------------------------------*/
- 
- /* Image Showcase Styles */
- 
 .image-showcase {
     padding: 50px;
-    /* Dark background to highlight the images */
-    text-align: center;
- 
+    text-align: center
 }
 
 .vertical-image-container {
     display: flex;
-    flex-direction: column; /* Display images in a vertical column */
-    align-items: center; /* Center the images horizontally */
-    gap: 10px; /* Space between the images */
-	
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
 }
 
 .image-item {
     position: relative;
     overflow: hidden;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-		padding-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    transition: transform .3s ease;
+    padding-bottom: 30px
 }
 
 .image-item:hover {
-    transform: scale(1.05); /* Enlarge slightly on hover */
+    transform: scale(1.05)
 }
 
 .image-item img {
-    width: 60%; /* Adjust width to fit vertically */
+    width: 60%;
     height: auto;
-    border-radius: 15px; /* Rounded corners for the image */
+    border-radius: 15px
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-/* Hero Section */
 .hero {
-    background-color: #111; /* Can add background image here */
+    background-color: #111;
     background-size: cover;
     background-position: left;
     text-align: center;
     padding: 100px 20px;
-	text-align: left;
-    color: white;
+    text-align: left;
+    color: white
 }
 
 .hero h1 {
     font-size: 9em;
-    margin: 0;
+    margin: 0
 }
 
 .hero p {
     font-size: 1.5em;
-    margin: 20px 0;
+    margin: 20px 0
 }
 
-/* Portfolio Gallery */
 .portfolio-gallery {
     padding: 40px 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .portfolio-gallery h2 {
     text-align: center;
     font-size: 2.5em;
-    margin-bottom: 40px;
+    margin-bottom: 40px
 }
 
-/* Grid Layout */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 20px
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2)
 }
 
 .gallery-item img {
     width: 100px;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform .3s ease
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* Hover Effect */
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 .overlay {
@@ -691,130 +440,84 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, .6);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity .3s ease;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
 .gallery-item:hover .overlay {
-    opacity: 1;
+    opacity: 1
 }
 
 .overlay h3 {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.5em
 }
 
-
-
-/* 19.images main END
---------------------------------------------------------------------------------*/
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Footer */
-
-
-
 .footer {
-    background-color: #111; /* Footer background color */
-    color: #fff; /* Footer text color */
-    padding: 20px; /* Padding for the footer */
-	margin-top: 150px;
-	 
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    margin-top: 150px
 }
 
 .footer-container {
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Align items vertically */
+    display: flex;
+    justify-content: space-between;
+    align-items: center
 }
 
 .footer-logo-container {
-    flex: 1; /* Takes space on the left */
+    flex: 1
 }
 
 .footer-logo {
-    width: 100px; /* Adjust logo size as needed */
-	margin-left: auto
+    width: 100px;
+    margin-left: auto
 }
 
 .footer-home {
-    flex: 1; /* Centered space for home button */
-    text-align: center; /* Center the button */
+    flex: 1;
+    text-align: center
 }
 
 .footer-btn {
-    display: inline-block; /* Make the anchor tag behave like a button */
-    padding: 10px 20px; /* Adjust padding for button appearance */
-    font-size: 16px; /* Font size */
-    color: #fff; /* Text color */
-    background-color: #007bff; /* Button background color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease; /* Smooth transition */
-	 margin-left: 140px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color .3s ease;
+    margin-left: 140px
 }
 
 .footer-btn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3
 }
 
 .footer-social-media {
-    flex: 1; /* Takes space on the right */
-    text-align: right; /* Align links to the right */
-    
-	margin-right: 150px;
+    flex: 1;
+    text-align: right;
+    margin-right: 150px
 }
 
 .footer-social-media a {
-    color: #fff; /* Link color */
-    margin-left: 10px; /* Spacing between individual social media links */
-    text-decoration: none; /* Remove underline */
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none
 }
 
 .footer-social-media a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline
 }
 
 .footer-rights {
-    text-align: center; /* Center the copyright text */
-    margin-top: 10px; /* Margin for separation */
+    text-align: center;
+    margin-top: 10px
 }
-
-
- 
-
-
-
-
-
-	
-	
-	
-	
-	
-	
