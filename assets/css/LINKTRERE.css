@@ -1,0 +1,210 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;  /* Change the background from red to white */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section (optional styling if needed) */
+header {
+    text-align: center;
+    padding: 20px;
+    
+    color: #000;
+}
+
+/* Links Section */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 70px;
+	margin-top: 90px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px; /* Center the image */
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 5px;
+	text-align-last: center
+}
+
+.bio {
+    font-size: 18px;
+    color: red;
+    margin-bottom: 20px;
+	text-align-last: center
+}
+
+/* Links Section */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the buttons */
+	margin-bottom: 140px
+}
+
+/* Links Styling */
+.link {
+    background-color: white;
+    color: #FF0000;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 35px; /* Fully rounded buttons */
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+    width: 160%; /* Buttons width set to 70% */
+	height: 50%;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    transition: transform 0.3s ease; /* For hover zoom effect */
+}
+
+.link:hover {
+    transform: scale(1.09); /* Hover zoom effect */
+}
+
+.icon {
+    width: 10%;
+    height: 10%x;
+    margin-right: 25px;
+    object-fit: cover; /* Ensure icons are covered nicely */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    
+    box-sizing: border-box;
+	margin-bottom: 90px;
+}
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.links-section a {
+    display: block;
+    width: 300px;                /* Set a width for buttons */
+    background-color: #FFF;      /* White background for buttons */
+    color: #000;                 /* Black text */
+    text-align: center;          /* Center-align the text */
+    padding: 10px 0;             /* Add padding for button size */
+    margin-bottom: 15px;         /* Space between buttons */
+    border-radius: 15px;         /* Rounded corners for buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Light shadow for better look */
+    font-weight: bold;           /* Make text bold */
+    font-size: 16px;             /* Adjust text size */
+    text-decoration: none;       /* Remove underline from links */
+}
+
+.links-section a img {
+    vertical-align: middle;
+    margin-right: 10px;          /* Space between icon and text */
+}
+
+.links-section a:hover {
+    background-color: #f0f0f0;   /* Slight hover effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;      /* Dark background for footer */
+    color: #fff;                 /* White text */
+    padding: 20px 0;             /* Space inside the footer */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer__social .social-icon {
+    margin: 0 2px;              /* Space between social icons */
+    color: #fff;
+    font-size: 10px;             /* Icon size */
+    text-decoration: none;
+}
+
+.footer__social .social-icon:hover {
+    color: #ffcc00;              /* Change color on hover */
+}
+
+/* Flexbox to ensure footer is always at the bottom */
+.page-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Extra responsiveness (optional) */
+@media (max-width: 600px) {
+    .links-section a {
+        width: 90%;              /* Make links full-width on small screens */
+    }
+}

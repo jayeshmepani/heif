@@ -1,0 +1,478 @@
+ 
+
+html, body {
+	cursor: none;
+}
+
+.custom-cursor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+ 
+ 
+
+ 
+} 
+.boxes .box:nth-child(1) {
+	background-color: palevioletred;
+}
+
+.boxes .box:nth-child(2) {
+	background-color: palegreen;
+}
+
+.boxes .box:nth-child(3) {
+	background-color: paleturquoise;
+}
+
+.box-bound {
+	display: block;
+	width: 100px;
+	height: 50px;
+	background-position: top left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+}
+
+.box-bound.active {
+	width: 150px;
+	height: 75px;
+}
+
+
+* 
+
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ 
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+	
+	
+}
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+  color: #fff;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero {
+  text-align:left;
+  padding: 90px 0px;
+	padding-left: 80px;
+  background-color: #111;
+  
+}
+
+.hero h1 {
+  font-size: 160px;
+  font-weight:lighter;
+	 line-height: 0.9;
+
+	
+}
+
+.hero h1 span {
+  font-size: 150px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 14px;
+	
+}
+
+.contact-info {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+/* Basic Styling */
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+ 
+  
+}
+
+ 
+
+.hero1 {
+
+  padding: 40px;
+	
+}
+
+.hero1 h1 {
+  font-size: 130px;
+  font-weight: 300;
+  line-height: 0.9;
+	
+ 
+}
+
+.hero1 h2 {
+  font-size: 130px;
+  font-weight: 300;
+	 line-height: 0.8;
+	
+}
+
+
+
+
+#heif{
+	opacity: 30%;
+}
+
+#hei{
+	opacity: 30%;
+}
+
+
+#he{
+	opacity: 30%;
+	margin-left: 20PX;
+}
+
+#h{
+	opacity: 30%;
+	margin-left: 20PX;
+	margin-bottom: 20PX;
+}
+
+
+
+
+
+
+
+
+
+.hero1 h2 Span{
+  font-size: 130px;
+  font-weight: 300;
+	margin-left: 20PX;
+	 line-height: 0.8;
+	
+ 
+}
+
+
+
+
+
+
+.hero1 h2 span {
+  cursor: pointer;
+  color: #ccc;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+.hero1 h1 span {
+  cursor: pointer;
+  color: #ccc;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+.hero1 h2{
+  cursor: pointer;
+  color: #ccc;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+	 
+	
+	
+}
+
+
+
+
+
+/* Contact Info */
+.contact-info {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* Image Hover Effect */
+.hover-image {
+  position: absolute;
+	padding-top: -1200px;
+  width: 330px;
+  height: 330px;
+  display: none;
+    /* Avoid image blocking interactions */
+}
+
+.hover-image img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: calc(33.33% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.slide a {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.page-indicator.active {
+    background-color: #333;
+}
+
+body.dragging * {
+    cursor: grabbing !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
