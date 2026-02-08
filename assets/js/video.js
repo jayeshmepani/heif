@@ -1,10 +1,6 @@
-function playPause(videoId, btn) {
-    var video = document.getElementById(videoId);
-    if (video.paused) {
-        video.play();
-        btn.innerHTML = '<i class="fas fa-pause"></i>';
-    } else {
-        video.pause();
-        btn.innerHTML = '<i class="fas fa-play"></i>';
-    }
+function playPause(a, e) {
+  var s = document.getElementById(a);
+  s.paused
+    ? (s.play(), (e.innerHTML = '<i class="fas fa-pause"></i>'))
+    : (s.pause(), (e.innerHTML = '<i class="fas fa-play"></i>'));
 }
