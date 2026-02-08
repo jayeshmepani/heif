@@ -4,74 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEIF ARTIST</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Thumbnail Designs | HEIF Artist</title>
+    <meta name="description"
+        content="Browse HEIF's thumbnail design portfolio featuring eye-catching YouTube and social media thumbnails.">
+    <meta name="author" content="Jayesh Mepani">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thumbnail Designs | HEIF Artist">
+    <meta property="og:description" content="Eye-catching thumbnail designs for YouTube and social media.">
+    <meta property="og:image" content="assets/img/thumbnail/thumbnail.jpg">
+    <meta property="og:site_name" content="HEIF Artist">
+
+    <!-- Preconnect for Performance (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logow.png">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/css.css">
     <link rel="stylesheet" href="assets/css/masonry.css">
     <link rel="stylesheet" href="assets/css/cursor.css">
 </head>
 
 <body>
-    <div id="preloader">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
         <div class="loader"></div>
     </div>
 
-    <canvas id="particle-canvas"></canvas>
+    <!-- Decorative Background -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
-    <header>
-        <div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" alt=""
-                    style="width: 122px;" /></a></div>
-        <nav>
-            <ul>
+    <!-- Header -->
+    <header role="banner">
+        <div class="header__logo">
+            <a href="index.html" aria-label="HEIF Artist Home">
+                <img src="assets/img/logo.png" alt="HEIF Artist Logo" width="122" height="auto">
+            </a>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul role="list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="work.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="linktree.html">Linktree</a></li>
             </ul>
-            <a href="#" class="nav-toggle hover-link"><i class="fa-solid fa-bars"></i></a>
+            <a href="#" class="nav-toggle hover-link" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                </svg>
+            </a>
         </nav>
     </header>
-    <div class="page-wrap" id="root"></div>
-    <div class="wil-content">
-        <section class="awe-section">
-            <div class="container">
-                <div class="page-title pb-40">
-                    <h1 class="page-title__title">Thumbnail Designs</h1><br>
-                    <div class="page-title__divider"></div>
-                </div>
-            </div>
-        </section>
-        <section class="image-showcase">
-            <div class="flex-container">
-                <div class="image-item"><img src="assets/img/works/18.jpg" alt="Sample Work 1"></div>
-                <div class="image-item"><img src="assets/img/works/24.jpg" alt="Sample Work 2"></div>
-                <div class="image-item"><img src="assets/img/works/07.jpg" alt="Sample Work 3"></div>
-                <div class="image-item"><img src="assets/img/works/06.jpg" alt="Sample Work 4"></div>
-            </div>
-        </section>
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-logo-container"><img src="assets/img/logo.png" alt="Logo" class="footer-logo">
-                </div>
-                <div class="footer-home"><a class="footer-btn home-btn" href="index.html">Home</a></div>
-                <div class="footer-social-media"><a href="linktree.html" target="_blank">LINKTREE</a></div>
-            </div>
-            <div class="footer-rights">
-                <p>&copy; 2024 Heif. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
 
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/particles.js"></script>
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="wil-content">
+            <section class="awe-section" aria-labelledby="page-title">
+                <div class="container">
+                    <div class="page-title pb-40">
+                        <h1 id="page-title" class="page-title__title">Thumbnail Designs</h1>
+                        <div class="page-title__divider"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="image-showcase" aria-label="Thumbnail design gallery">
+                <div class="flex-container">
+                    <div class="image-item"><img src="assets/img/works/18.jpg" alt="Thumbnail design sample 1"
+                            loading="lazy" decoding="async"></div>
+                    <div class="image-item"><img src="assets/img/works/24.jpg" alt="Thumbnail design sample 2"
+                            loading="lazy" decoding="async"></div>
+                    <div class="image-item"><img src="assets/img/works/07.jpg" alt="Thumbnail design sample 3"
+                            loading="lazy" decoding="async"></div>
+                    <div class="image-item"><img src="assets/img/works/06.jpg" alt="Thumbnail design sample 4"
+                            loading="lazy" decoding="async"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img src="assets/img/logo.png" alt="HEIF Artist Logo" class="footer-logo" loading="lazy"
+                    decoding="async">
+            </div>
+            <div class="footer-home">
+                <a class="footer-btn home-btn" href="index.html">Home</a>
+            </div>
+            <div class="footer-social-media">
+                <a href="linktree.html" target="_blank" rel="noopener noreferrer">LINKTREE</a>
+            </div>
+        </div>
+        <div class="footer-rights">
+            <p>&copy; 2024 HEIF Artist. All rights reserved.</p>
+            <p class="developer-credit">Developed by <a href="https://jayeshmepani.github.io/Portfolio/" target="_blank"
+                    rel="noopener noreferrer">Jayesh Mepani</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts with defer for performance -->
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/particles.js" defer></script>
+    <script src="assets/js/lenis.min.js" defer></script>
+    <script src="assets/js/scroll-animations.js" defer></script>
     <script>
         window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
+            setTimeout(() => { preloader.style.display = 'none'; }, 500);
         });
     </script>
 </body>
