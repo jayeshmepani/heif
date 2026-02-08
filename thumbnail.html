@@ -7,9 +7,17 @@
     <title>HEIF ARTIST</title>
     <link rel="icon" type="image/x-icon" href="assets/img/logow.png">
     <link rel="stylesheet" href="assets/css/css.css">
+    <link rel="stylesheet" href="assets/css/masonry.css">
+    <link rel="stylesheet" href="assets/css/cursor.css">
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
     <header>
         <div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" alt=""
                     style="width: 122px;" /></a></div>
@@ -21,39 +29,51 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="linktree.html">Linktree</a></li>
             </ul>
+            <a href="#" class="nav-toggle hover-link"><i class="fa-solid fa-bars"></i></a>
         </nav>
     </header>
+    <div class="page-wrap" id="root"></div>
+    <div class="wil-content">
+        <section class="awe-section">
+            <div class="container">
+                <div class="page-title pb-40">
+                    <h1 class="page-title__title">Thumbnail Designs</h1><br>
+                    <div class="page-title__divider"></div>
+                </div>
+            </div>
+        </section>
+        <section class="image-showcase">
+            <div class="flex-container">
+                <div class="image-item"><img src="assets/img/works/18.jpg" alt="Sample Work 1"></div>
+                <div class="image-item"><img src="assets/img/works/24.jpg" alt="Sample Work 2"></div>
+                <div class="image-item"><img src="assets/img/works/07.jpg" alt="Sample Work 3"></div>
+                <div class="image-item"><img src="assets/img/works/06.jpg" alt="Sample Work 4"></div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo-container"><img src="assets/img/logo.png" alt="Logo" class="footer-logo">
+                </div>
+                <div class="footer-home"><a class="footer-btn home-btn" href="index.html">Home</a></div>
+                <div class="footer-social-media"><a href="linktree.html" target="_blank">LINKTREE</a></div>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2024 Heif. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 
-    <body>
-        <div class="page-wrap" id="root"></div>
-        <div class="wil-content">
-            <section class="awe-section">
-                <div class="container">
-                    <div class="page-title pb-40">
-                        <h1 class="page-title__title">Thumbnail Designs</h1><br>
-                        <div class="page-title__divider"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="image-showcase">
-                <div class="image-container">
-                    <div class="image-item"><img src="assets/img/works/18.jpg" alt="Sample Work 1"></div>
-                    <div class="image-item"><img src="assets/img/works/24.jpg" alt="Sample Work 2"></div>
-                    <div class="image-item"><img src="assets/img/works/07.jpg" alt="Sample Work 3"></div>
-                    <div class="image-item"><img src="assets/img/works/06.jpg" alt="Sample Work 4"></div>
-                </div>
-            </section>
-            <footer class="footer">
-                <div class="footer-container">
-                    <div class="footer-logo-container"><img src="assets/img/logo.png" alt="Logo" class="footer-logo">
-                    </div>
-                    <div class="footer-home"><a class="footer-btn home-btn" href="index.html">Home</a></div>
-                    <div class="footer-social-media"><a href="linktree.html" target="_blank">LINKTREE</a></div>
-                </div>
-                <div class="footer-rights">
-                    <p>&copy; 2024 Heif. All rights reserved.</p>
-                </div>
-            </footer>
-    </body>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
 
 </html>

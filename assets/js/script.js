@@ -60,7 +60,7 @@ function updateCarousel() {
             o.forEach((e, t) => {
               a[t] = e;
             });
-            const s = JSON.stringify(a);
+            const r = JSON.stringify(a);
             ((t.innerHTML = "Please wait..."),
               fetch("https://api.web3forms.com/submit", {
                 method: "POST",
@@ -68,7 +68,7 @@ function updateCarousel() {
                   "Content-Type": "application/json",
                   Accept: "application/json",
                 },
-                body: s,
+                body: r,
               })
                 .then(async (e) => {
                   let n = await e.json();
@@ -100,3 +100,9 @@ function updateCarousel() {
       );
     });
   })());
+const navToggle = document.querySelector(".nav-toggle"),
+  navMenu = document.querySelector("header nav ul");
+navToggle &&
+  navToggle.addEventListener("click", (e) => {
+    (e.preventDefault(), navMenu.classList.toggle("active"));
+  });

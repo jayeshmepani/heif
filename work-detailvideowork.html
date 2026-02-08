@@ -7,10 +7,18 @@
     <title>HEIF ARTIST</title>
     <link rel="icon" type="image/x-icon" href="assets/img/logow.png">
     <link rel="stylesheet" href="assets/css/css.css">
+    <link rel="stylesheet" href="assets/css/masonry.css">
+    <link rel="stylesheet" href="assets/css/cursor.css">
     <script src="assets/js/video.js"></script>
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
     <header>
         <div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" alt=""
                     style="width: 122px;" /></a></div>
@@ -22,175 +30,220 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="linktree.html">Linktree</a></li>
             </ul>
+            <a href="#" class="nav-toggle hover-link"><i class="fa-solid fa-bars"></i></a>
         </nav>
     </header>
-
-    <body>
-        <div class="page-wrap" id="root">
-            <h1 class="page-title__title">Video Editing Showcase</h1><br>
-            <section class="video-showcase">
-                <div class="video-container">
-                    <div class="video-grid">
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video1" width="100%"
-                                    poster="assets/img/works/time machine banner.png">
-                                    <source src="assets/img/works/timemachine.mp4" type="video/mp4">Your browser does
-                                    not support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video1')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>TUSHAR NAGAR'S Project</h3>
-                                <p>Tushar Nagar's Album Named "TIME MACHINE" Intro</p>
-                            </div>
+    <div class="page-wrap" id="root">
+        <h1 class="page-title__title">Video Editing Showcase</h1><br>
+        <section class="video-showcase">
+            <div>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video1" width="100%"
+                                poster="assets/img/works/time machine banner.png">
+                                <source src="assets/img/works/timemachine.mp4" type="video/mp4">Your browser does
+                                not support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video1')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video2" width="100%"
-                                    poster="assets/img/works/tushar nagar banner.png">
-                                    <source src="assets/img/works/IMG_3193.MP4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video2')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>TUSHAR NAGAR'S Project</h3>
-                                <p>Tushar Nagar's Album Named "TIME MACHINE" Motion Graphics Reel Intro</p>
-                            </div>
+                        <div class="video-caption">
+                            <h3>TUSHAR NAGAR'S Project</h3>
+                            <p>Tushar Nagar's Album Named "TIME MACHINE" Intro</p>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video3" width="100%"
-                                    poster="assets/img/works/bhasad green banner.png">
-                                    <source src="assets/img/works/bhasad green screen.mp4" type="video/mp4">Your browser
-                                    does not support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video3')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>TUSHAR NAGAR'S Project</h3>
-                                <p>Tushar Nagar's Album Named "TIME MACHINE" Green Screen Removal Works{ 3 Video}</p>
-                            </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video2" width="100%"
+                                poster="assets/img/works/tushar nagar banner.png">
+                                <source src="assets/img/works/IMG_3193.MP4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video2')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video4" width="100%"
-                                    poster="assets/img/works/product banner.png">
-                                    <source src="assets/img/works/product.mp4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video4')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>Product Motion Graphics Animation{ Collage Project Assignment}</p>
-                            </div>
+                        <div class="video-caption">
+                            <h3>TUSHAR NAGAR'S Project</h3>
+                            <p>Tushar Nagar's Album Named "TIME MACHINE" Motion Graphics Reel Intro</p>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video5" width="100%"
-                                    poster="assets/img/works/ntr banner.png">
-                                    <source src="assets/img/works/ntr.mp4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video5')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>Motion Graphics Animation 3D WORK IN AFTER EFFECTS{ Collage Project Assignment}</p>
-                            </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video3" width="100%"
+                                poster="assets/img/works/bhasad green banner.png">
+                                <source src="assets/img/works/bhasad green screen.mp4" type="video/mp4">Your browser
+                                does not support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video3')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video6" width="100%"
-                                    poster="assets/img/works/vardaan banner.png">
-                                    <source src="assets/img/works/animatics.mp4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video6')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>2D ANIMATICS IN PREMIERE PRO. This Video has reached to CARRYMINATI, Deepak Char.
-                                </p>
-                            </div>
+                        <div class="video-caption">
+                            <h3>TUSHAR NAGAR'S Project</h3>
+                            <p>Tushar Nagar's Album Named "TIME MACHINE" Green Screen Removal Works{ 3 Video}</p>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video7" width="100%"
-                                    poster="assets/img/works/hobo mela banner.png">
-                                    <source src="assets/img/works/hobo mela.mp4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video7')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>HOBO MELA Is a CAFE, Freelance Work, Shoot & Edit by HEIF{ PREMIERE PRO}</p>
-                            </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video4" width="100%"
+                                poster="assets/img/works/product banner.png">
+                                <source src="assets/img/works/product.mp4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video4')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video8" width="100%"
-                                    poster="assets/img/works/WEDDING INVITAION.png">
-                                    <source src="assets/img/works/wedding invutaion.mp4" type="video/mp4">Your browser
-                                    does not support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video8')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>FREELANCING'S project</h3>
-                                <p>A Wedding Invitation Card Animation Design By HEIF, Blender By Aatif</p>
-                            </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>Product Motion Graphics Animation{ Collage Project Assignment}</p>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video9" width="100%"
-                                    poster="assets/img/works/akshar river cruise banner.jpg">
-                                    <source src="assets/img/works/akshar river cruise.mp4" type="video/mp4">Your browser
-                                    does not support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video9')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>JOB'S Project</h3>
-                                <p>An Edit for AKSHAR RIVER CRUISE, AT ATAL BRIDGE, In PREMIERE PRO, SKAV</p>
-                            </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video5" width="100%"
+                                poster="assets/img/works/ntr banner.png">
+                                <source src="assets/img/works/ntr.mp4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video5')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video10" width="100%"
-                                    poster="assets/img/works/feelorreel banner.jpg">
-                                    <source src="assets/img/works/REELORFEEL.mp4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video10')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>Product Motion Graphics Animation{ Collage Project Assignment}</p>
-                            </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>Motion Graphics Animation 3D WORK IN AFTER EFFECTS{ Collage Project Assignment}</p>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video11" width="100%"
-                                    poster="assets/img/works/angry birds banner.png">
-                                    <source src="assets/img/works/animationbird.mp4" type="video/mp4">Your browser does
-                                    not support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video11')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>Motion Graphics Animation 2D WORK IN AFTER EFFECTS{ Collage Project Assignment}</p>
-                            </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video6" width="100%"
+                                poster="assets/img/works/vardaan banner.png">
+                                <source src="assets/img/works/animatics.mp4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video6')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
                         </div>
-                        <div class="video-item">
-                            <div class="video-thumbnail"><video id="video12" width="100%"
-                                    poster="assets/img/works/captain millar banner.png">
-                                    <source src="assets/img/works/intro.mp4" type="video/mp4">Your browser does not
-                                    support the video tag.
-                                </video><button class="play-btn" onclick="togglePlay('video12')"><i>Play</i></button>
-                            </div>
-                            <div class="video-caption">
-                                <h3>COLLAGE'S Project</h3>
-                                <p>2D INTRO ANIMATION IN PREMIERE PRO.{ Collage Project Assignment} </p>
-                            </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>2D ANIMATICS IN PREMIERE PRO. This Video has reached to CARRYMINATI, Deepak Char.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video7" width="100%"
+                                poster="assets/img/works/hobo mela banner.png">
+                                <source src="assets/img/works/hobo mela.mp4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video7')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
+                        </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>HOBO MELA Is a CAFE, Freelance Work, Shoot & Edit by HEIF{ PREMIERE PRO}</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video8" width="100%"
+                                poster="assets/img/works/WEDDING INVITAION.png">
+                                <source src="assets/img/works/wedding invutaion.mp4" type="video/mp4">Your browser
+                                does not support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video8')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
+                        </div>
+                        <div class="video-caption">
+                            <h3>FREELANCING'S project</h3>
+                            <p>A Wedding Invitation Card Animation Design By HEIF, Blender By Aatif</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video9" width="100%"
+                                poster="assets/img/works/akshar river cruise banner.jpg">
+                                <source src="assets/img/works/akshar river cruise.mp4" type="video/mp4">Your browser
+                                does not support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video9')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
+                        </div>
+                        <div class="video-caption">
+                            <h3>JOB'S Project</h3>
+                            <p>An Edit for AKSHAR RIVER CRUISE, AT ATAL BRIDGE, In PREMIERE PRO, SKAV</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video10" width="100%"
+                                poster="assets/img/works/feelorreel banner.jpg">
+                                <source src="assets/img/works/REELORFEEL.mp4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video10')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
+                        </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>Product Motion Graphics Animation{ Collage Project Assignment}</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video11" width="100%"
+                                poster="assets/img/works/angry birds banner.png">
+                                <source src="assets/img/works/animationbird.mp4" type="video/mp4">Your browser does
+                                not support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video11')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
+                        </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>Motion Graphics Animation 2D WORK IN AFTER EFFECTS{ Collage Project Assignment}</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail"><video id="video12" width="100%"
+                                poster="assets/img/works/captain millar banner.png">
+                                <source src="assets/img/works/intro.mp4" type="video/mp4">Your browser does not
+                                support the video tag.
+                            </video><button class="play-btn" onclick="togglePlay('video12')"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21" />
+                                </svg></button>
+                        </div>
+                        <div class="video-caption">
+                            <h3>COLLAGE'S Project</h3>
+                            <p>2D INTRO ANIMATION IN PREMIERE PRO.{ Collage Project Assignment} </p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <footer class="footer">
-                <div class="footer-container">
-                    <div class="footer-logo-container"><img src="assets/img/logo.png" alt="Logo" class="footer-logo">
-                    </div>
-                    <div class="footer-home"><a class="footer-btn home-btn" href="index.html">Home</a></div>
-                    <div class="footer-social-media"><a href="linktree.html" target="_blank">LINKTREE</a></div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo-container"><img src="assets/img/logo.png" alt="Logo" class="footer-logo">
                 </div>
-                <div class="footer-rights">
-                    <p>&copy; 2024 Heif. All rights reserved.</p>
-                </div>
-            </footer>
-            <script>function togglePlay(videoId) { var video = document.getElementById(videoId); if (video.paused) { video.play(); } else { video.pause(); } } </script>
-    </body>
+                <div class="footer-home"><a class="footer-btn home-btn" href="index.html">Home</a></div>
+                <div class="footer-social-media"><a href="linktree.html" target="_blank">LINKTREE</a></div>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2024 Heif. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/particles.js"></script>`n    <!-- Lenis Smooth Scroll -->`n    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>`n    <script src="assets/js/scroll-animations.js"></script>
+        <script>
+            window.addEventListener('load', function () {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            });
+        </script>
+</body>
 
 </html>
