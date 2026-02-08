@@ -1,4 +1,5 @@
 .masonry-container {
+    -webkit-columns: 400px;
     columns: 400px;
     gap: 0;
     width: 100%

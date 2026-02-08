@@ -4,7 +4,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none
+    cursor: none;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3D6AFF, #00E5FF);
+    border-radius: 10px;
+    border: 2px solid #0a0a0a
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00E5FF, #3D6AFF)
+}
+
+@supports (scrollbar-width:thin) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #3D6AFF #0a0a0a
+    }
 }
 
 .skip-link {
@@ -58,6 +87,7 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #fff;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all .4s cubic-bezier(.175, .885, .32, 1.275);
     position: relative;
@@ -71,6 +101,8 @@
     border-radius: 50px;
     padding: 1px;
     background: linear-gradient(135deg, #3D6AFF, #00E5FF, #3D6AFF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     opacity: 0;
@@ -286,6 +318,7 @@ header {
     top: 0;
     background-color: rgba(17, 17, 17, .9);
     z-index: 1000;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     width: 100%
 }
@@ -512,6 +545,7 @@ body {
     cursor: pointer;
     border-radius: 50px;
     z-index: 10;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
     box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
@@ -1450,6 +1484,7 @@ header nav ul li a:hover {
         left: 0;
         width: 100%;
         background-color: rgba(10, 10, 10, .95);
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         padding: 20px 0;
         text-align: center;
