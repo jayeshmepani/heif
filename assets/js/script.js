@@ -10,9 +10,24 @@ if (hoverTexts.length > 0) {
       e.addEventListener("mouseenter", () => {
         n.style.display = "block";
       });
-      e.addEventListener("mousemove", (e) => {
-        n.style.left = `${e.pageX + 10}px`;
-        n.style.top = `${e.pageY + 10}px`;
+      e.addEventListener("mousemove", (ev) => {
+        // Anchor the image by its top-center to the cursor
+        n.style.display = 'block';
+        const imgW = n.offsetWidth || n.clientWidth;
+        const imgH = n.offsetHeight || n.clientHeight;
+        const padding = 8; // keep some gap from viewport edges
+        // Use page coordinates (include scrolling)
+        let left = ev.pageX - imgW / 2;
+        let top = ev.pageY; // top-center anchored to cursor
+
+        // If overflow on the left, anchor to left edge
+        if (left < padding) left = padding;
+        // If overflow on the right, anchor to right edge
+        if (left + imgW > window.innerWidth - padding)
+          left = window.innerWidth - imgW - padding;
+
+        n.style.left = `${left}px`;
+        n.style.top = `${top}px`;
       });
       e.addEventListener("mouseleave", () => {
         n.style.display = "none";

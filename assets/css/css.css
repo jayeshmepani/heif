@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
+    /* cursor: none; */
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
@@ -20,19 +18,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3D6AFF, #00E5FF);
+    background: linear-gradient(180deg, rgb(58 214 37), rgb(58 214 37));
     border-radius: 10px;
     border: 2px solid #0a0a0a
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #00E5FF, #3D6AFF)
+    background: linear-gradient(180deg, rgb(58 214 37), rgb(58 214 37))
 }
 
 @supports (scrollbar-width:thin) {
     * {
         scrollbar-width: thin;
-        scrollbar-color: #3D6AFF #0a0a0a
+        scrollbar-color: rgb(58 214 37) #0a0a0a
     }
 }
 
@@ -40,7 +38,7 @@
     position: absolute;
     top: -40px;
     left: 0;
-    background: #3D6AFF;
+    background: rgb(58 214 37);
     color: #fff;
     padding: 8px 16px;
     z-index: 10000;
@@ -100,7 +98,7 @@
     inset: 0;
     border-radius: 50px;
     padding: 1px;
-    background: linear-gradient(135deg, #3D6AFF, #00E5FF, #3D6AFF);
+    background: linear-gradient(135deg, rgb(58 214 37), rgb(58 214 37), rgb(58 214 37));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -114,10 +112,10 @@
 }
 
 .role-badge:hover {
-    background: rgba(61, 106, 255, .15);
+    background: rgba(58, 214, 37, .15);
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(61, 106, 255, .3);
-    color: #00E5FF
+    box-shadow: 0 15px 40px rgba(58, 214, 37, .3);
+    color: rgb(58 214 37)
 }
 
 .role-badge svg {
@@ -128,30 +126,23 @@
 .role-badge:hover svg {
     opacity: 1;
     transform: rotate(10deg) scale(1.2);
-    color: #00E5FF
+    color: rgb(58 214 37)
 }
 
 @media (max-width:768px) {
     .role-badges {
         flex-direction: column;
         align-items: center;
-        gap: 12px
+        gap: 10px;
     }
 
     .role-badge {
-        padding: 10px 20px;
-        font-size: 12px
+        padding: 8px 16px;
+        font-size: 10px
     }
 }
 
-#particle-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100dvw;
-    height: 100dvh;
-    z-index: -1
-}
+/* particle canvas styles removed */
 
 html {
     scroll-behavior: smooth
@@ -196,8 +187,7 @@ html {
         font-size: 38px
     }
 
-    .hero1 h1,
-    .hero1 h2 span {
+    .hero1 h1 {
         font-size: 22px !important
     }
 }
@@ -206,7 +196,9 @@ body {
     background-color: #111;
     color: #fff;
     font-family: 'Arial', sans-serif;
-    overflow-x: hidden
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 html,
@@ -215,6 +207,14 @@ body {
     min-height: 100dvh;
     height: auto;
     width: auto
+}
+
+main {
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: 1rem !important;
 }
 
 @media (max-width:768px) {
@@ -294,7 +294,7 @@ body {
     width: 50px;
     height: 50px;
     border: 3px solid #333;
-    border-top: 3px solid #00FF00;
+    border-top: 3px solid rgb(58 214 37);
     border-radius: 50%;
     animation: spin 1s linear infinite
 }
@@ -356,7 +356,7 @@ header nav ul li a::after {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #3D6AFF, #00E5FF);
+    background: linear-gradient(90deg, rgb(58 214 37), rgb(58 214 37));
     transition: all .3s ease;
     transform: translateX(-50%)
 }
@@ -379,7 +379,6 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 {
-    font-family: 'Syne', sans-serif;
     font-size: 160px;
     font-weight: 800;
     line-height: .8;
@@ -420,10 +419,11 @@ header nav ul li a:hover::after {
 
 .hover-image {
     position: absolute;
-    padding-top: -1200px;
+    /* padding-top: -1200px; */
     width: 330px;
     height: 330px;
     display: none;
+    pointer-events: none;
 
     @media (width<768px) {
         width: 175px !important;
@@ -518,7 +518,7 @@ body {
 
 .video-thumbnail {
     position: relative;
-    aspect-ratio: 16/9
+    /* aspect-ratio: 16/9 */
 }
 
 .video-thumbnail video {
@@ -573,15 +573,15 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
-    background: rgba(255, 87, 34, .9);
+    background: rgba(58, 214, 37, .9);
     color: #fff;
     content: "PAUSE"
 }
 
 .video-item.is-playing:hover .play-btn:hover {
-    background: #FF5722;
+    background: rgb(58 214 37);
     transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 8px 25px rgba(255, 87, 34, .5)
+    box-shadow: 0 8px 25px rgba(58, 214, 37, .5)
 }
 
 .play-btn i {
@@ -592,11 +592,13 @@ body {
     padding: 25px;
     text-align: center;
     background: #111;
-    border-radius: 0
+    border-radius: 0;
+    min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    min-height: stretch;
 }
 
 .video-caption h3 {
-    font-family: 'Syne', sans-serif;
     font-size: 18px;
     color: #fff;
     margin-bottom: 8px;
@@ -625,14 +627,12 @@ body {
 }
 
 .hero1 h1 {
-    font-family: 'Syne', sans-serif;
     font-size: 130px;
     font-weight: 300;
     line-height: .8
 }
 
 .hero1 h2 {
-    font-family: 'Syne', sans-serif;
     font-size: 130px;
     font-weight: 300;
     line-height: .8
@@ -660,7 +660,7 @@ body {
 .hero1 h2 Span {
     font-size: 130px;
     font-weight: 300;
-    margin-left: 20PX;
+    /* margin-left: 20PX; */
     line-height: .8
 }
 
@@ -669,7 +669,7 @@ body {
     color: #ccc;
     font-weight: bold;
     display: inline-block;
-    margin-bottom: 15px
+    /* margin-bottom: 15px */
 }
 
 .hero1 h1 span {
@@ -685,12 +685,12 @@ body {
     color: #ccc;
     font-weight: bold;
     display: inline-block;
-    margin-bottom: 15px
+    /* margin-bottom: 15px */
 }
 
 .hover-image {
     position: absolute;
-    padding-top: -1200px;
+    /* padding-top: -1200px; */
     width: 330px;
     height: 330px;
     display: none
@@ -721,9 +721,8 @@ body {
 }
 
 .contact-title {
-    font-family: 'Syne', sans-serif;
     font-size: 48px;
-    color: #FF5722;
+    color: rgb(58 214 37);
     margin-bottom: 60px;
     letter-spacing: 2px;
     text-transform: uppercase
@@ -748,12 +747,11 @@ body {
 
 .icon-box {
     font-size: 32px;
-    color: #FF5722;
+    color: rgb(58 214 37);
     margin-bottom: 10px
 }
 
 .contact-item h3 {
-    font-family: 'Syne', sans-serif;
     font-size: 20px;
     color: #fff;
     margin-bottom: 5px;
@@ -770,7 +768,7 @@ body {
 }
 
 .contact-item p a:hover {
-    color: #FF5722
+    color: rgb(58 214 37)
 }
 
 @media (max-width:768px) {
@@ -930,7 +928,11 @@ body {
 
 .hero p {
     font-size: 1.5em;
-    margin: 20px 0
+    margin: 20px 0;
+
+    @media (width<786px) {
+        font-size: revert;
+    }
 }
 
 .portfolio-gallery {
@@ -993,7 +995,7 @@ body {
 }
 
 .footer {
-    background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+    background: linear-gradient(180deg, #0a0a0a, #000);
     color: #fff;
     padding: 30px 20px 20px;
     margin-top: 0;
@@ -1010,7 +1012,7 @@ body {
     transform: translateX(-50%);
     width: 600px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(61, 106, 255, .5), transparent)
+    background: linear-gradient(90deg, transparent, rgba(58, 214, 37, .5), transparent)
 }
 
 .footer-container {
@@ -1042,7 +1044,11 @@ body {
 
 .footer-home {
     flex: 1;
-    text-align: center
+    text-align: center;
+
+    @media (width < 768px) {
+        display: none;
+    }
 }
 
 .footer-btn {
@@ -1055,7 +1061,7 @@ body {
     text-transform: uppercase;
     color: #fff;
     background: transparent;
-    border: 1px solid rgb(61, 106, 255);
+    border: 1px solid rgb(58 214 37);
     border-radius: 6px;
     text-decoration: none;
     overflow: hidden;
@@ -1063,8 +1069,8 @@ body {
 }
 
 .footer-btn:hover {
-    background: rgb(61, 106, 255);
-    box-shadow: 0 0 30px 5px rgba(61, 106, 255, .5);
+    background: rgb(58 214 37);
+    box-shadow: 0 0 30px 5px rgba(58, 214, 37, .5);
     transform: translateY(-3px)
 }
 
@@ -1104,7 +1110,11 @@ body {
 
 .footer-social-media {
     flex: 1;
-    text-align: right
+    text-align: right;
+
+    @media (width < 768px) {
+        display: none;
+    }
 }
 
 .footer-social-media a {
@@ -1126,7 +1136,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #3D6AFF, #00E5FF);
+    background: linear-gradient(90deg, rgb(58 214 37), rgb(58 214 37));
     transition: width .3s ease
 }
 
@@ -1153,13 +1163,13 @@ body {
 }
 
 .developer-credit a {
-    color: #3D6AFF;
+    color: rgb(58 214 37);
     text-decoration: none;
     transition: color .3s ease
 }
 
 .developer-credit a:hover {
-    color: #00E5FF
+    color: rgb(58 214 37)
 }
 
 .footer-rights p {
@@ -1207,7 +1217,6 @@ body {
 }
 
 .skills-title {
-    font-family: 'Syne', sans-serif;
     font-size: 48px;
     font-weight: 800;
     color: #fff;
@@ -1215,7 +1224,7 @@ body {
     text-align: center;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(255, 87, 34, .3)
+    text-shadow: 0 0 20px rgba(58, 214, 37, .3)
 }
 
 .skill-item {
@@ -1226,7 +1235,6 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    font-family: 'Syne', sans-serif;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -1234,7 +1242,7 @@ body {
 }
 
 .skill-percentage {
-    color: #FF5722
+    color: rgb(58 214 37)
 }
 
 .skill-bar {
@@ -1251,8 +1259,8 @@ body {
     position: relative;
     height: 100%;
     border-radius: 20px;
-    background: linear-gradient(90deg, #FF5722, #FF8A65);
-    box-shadow: 0 0 20px rgba(255, 87, 34, .6);
+    background: linear-gradient(90deg, rgb(58 214 37), rgba(58, 214, 37, 0.8));
+    box-shadow: 0 0 20px rgba(58, 214, 37, .6);
     width: 0;
     animation: fillUp 1.5s cubic-bezier(.175, .885, .32, 1.275) forwards
 }
@@ -1349,15 +1357,15 @@ body {
 
 @keyframes glowPulse {
     0% {
-        box-shadow: 0 0 15px rgba(255, 87, 34, .5)
+        box-shadow: 0 0 15px rgba(58, 214, 37, .5)
     }
 
     50% {
-        box-shadow: 0 0 25px rgba(255, 87, 34, .8)
+        box-shadow: 0 0 25px rgba(58, 214, 37, .8)
     }
 
     100% {
-        box-shadow: 0 0 15px rgba(255, 87, 34, .5)
+        box-shadow: 0 0 15px rgba(58, 214, 37, .5)
     }
 }
 
@@ -1383,7 +1391,15 @@ body {
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0)
+    transform: translateY(0);
+}
+
+.hero1 .reveal.visible {
+    font-size: clamp(1.75rem, 0.0724rem + 6.7105vw, 8.125rem) !important;
+
+    .hover-text {
+        font-size: clamp(1.75rem, 0.0724rem + 6.7105vw, 8.125rem) !important;
+    }
 }
 
 .reveal-left {
@@ -1441,12 +1457,12 @@ html.lenis body {
 }
 
 header nav ul li a[aria-current="page"] {
-    color: #3D6AFF;
+    color: rgb(58 214 37);
     font-weight: 700
 }
 
 header nav ul li a:hover {
-    color: #00E5FF
+    color: rgb(58 214 37)
 }
 
 .nav-toggle {
@@ -1520,4 +1536,65 @@ header nav ul li a:hover {
             transform: translateY(0)
         }
     }
+}
+
+.stars-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+
+    &::before {
+        background-image: radial-gradient(1px 1px at 20px 30px, white, transparent), radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, .8), transparent), radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, .6), transparent), radial-gradient(1px 1px at 90px 40px, white, transparent), radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, .7), transparent), radial-gradient(1px 1px at 160px 120px, white, transparent), radial-gradient(1px 1px at 200px 200px, rgba(255, 255, 255, .5), transparent), radial-gradient(1px 1px at 220px 50px, rgba(255, 255, 255, .8), transparent), radial-gradient(1px 1px at 280px 90px, white, transparent), radial-gradient(1px 1px at 320px 140px, rgba(255, 255, 255, .6), transparent), radial-gradient(1px 1px at 350px 30px, rgba(255, 255, 255, .9), transparent), radial-gradient(1px 1px at 400px 180px, white, transparent), radial-gradient(1px 1px at 430px 60px, rgba(255, 255, 255, .7), transparent), radial-gradient(1px 1px at 480px 100px, rgba(255, 255, 255, .8), transparent), radial-gradient(1px 1px at 520px 150px, white, transparent), radial-gradient(1px 1px at 580px 40px, rgba(255, 255, 255, .6), transparent), radial-gradient(1px 1px at 620px 200px, rgba(255, 255, 255, .9), transparent), radial-gradient(1px 1px at 680px 80px, white, transparent), radial-gradient(1px 1px at 720px 130px, rgba(255, 255, 255, .7), transparent), radial-gradient(1px 1px at 780px 170px, rgba(255, 255, 255, .5), transparent);
+        background-size: 800px 400px;
+        animation: twinkle 4s ease-in-out infinite alternate
+    }
+
+    &::after {
+        background-image: radial-gradient(1.5px 1.5px at 100px 100px, white, transparent), radial-gradient(1.5px 1.5px at 250px 50px, rgba(255, 255, 255, .9), transparent), radial-gradient(1.5px 1.5px at 380px 150px, white, transparent), radial-gradient(1.5px 1.5px at 500px 70px, rgba(255, 255, 255, .8), transparent), radial-gradient(1.5px 1.5px at 650px 180px, white, transparent), radial-gradient(1.5px 1.5px at 750px 30px, rgba(255, 255, 255, .9), transparent), radial-gradient(1.5px 1.5px at 180px 220px, rgba(255, 255, 255, .7), transparent), radial-gradient(1.5px 1.5px at 320px 280px, white, transparent), radial-gradient(1.5px 1.5px at 480px 250px, rgba(255, 255, 255, .8), transparent), radial-gradient(1.5px 1.5px at 600px 300px, white, transparent);
+        background-size: 900px 500px;
+        animation: twinkle 6s ease-in-out infinite alternate-reverse
+    }
+
+    &::before,
+    &::after,
+    .stars-extra {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        background: transparent
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: .5
+    }
+
+    50% {
+        opacity: .8
+    }
+
+    100% {
+        opacity: .6
+    }
+}
+
+.perspective {
+    perspective: 1000px
+}
+
+main#main-content {
+    flex: 1 0 auto;
+}
+
+footer.footer {
+    flex-shrink: 0;
 }

@@ -3,13 +3,29 @@ const PLAY_ICON =
   PAUSE_ICON =
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
 function togglePlay(e) {
-  var i = document.getElementById(e),
-    t = i.closest(".video-item"),
-    n = t.querySelector(".play-btn");
-  (i.paused
-    ? (i.play(), t.classList.add("is-playing"), (n.innerHTML = PAUSE_ICON))
-    : (i.pause(), t.classList.remove("is-playing"), (n.innerHTML = PLAY_ICON)),
-    (i.onended = function () {
-      (t.classList.remove("is-playing"), (n.innerHTML = PLAY_ICON));
+  var t = document.getElementById(e),
+    i = t.closest(".video-item"),
+    n = i.querySelector(".play-btn");
+  (t.paused
+    ? (t.play(), i.classList.add("is-playing"), (n.innerHTML = PAUSE_ICON))
+    : (t.pause(), i.classList.remove("is-playing"), (n.innerHTML = PLAY_ICON)),
+    (t.onended = function () {
+      (i.classList.remove("is-playing"), (n.innerHTML = PLAY_ICON));
     }));
 }
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".play-btn").forEach((e) => {
+    e.addEventListener("click", function () {
+      const e = this.closest(".video-item").querySelector("video");
+      e && e.id && togglePlay(e.id);
+    });
+  });
+  document.querySelectorAll(".video-thumbnail").forEach((e) => {
+    const t = e.querySelector("video");
+    t &&
+      t.id &&
+      e.addEventListener("click", function (e) {
+        e.target.classList.contains("play-btn") || togglePlay(t.id);
+      });
+  });
+});
