@@ -380,7 +380,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 {
-    font-size: min(160px, 20vw);
+    font-size: min(9rem, 20vw);
     font-weight: 500;
     line-height: .8;
     opacity: 0;
@@ -401,7 +401,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 span {
-    font-size: min(160px, 15vw);
+    font-size: min(150px, 16vw);
     font-weight: 600;
     color: #ccc;
     display: inline-block;
