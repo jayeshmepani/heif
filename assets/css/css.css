@@ -508,7 +508,8 @@ body {
     overflow: hidden;
     transition: transform .3s ease, box-shadow .3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
-    border: 1px solid #222
+    border: 1px solid #222;
+    max-height: fit-content;
 }
 
 .video-item:hover {
@@ -594,9 +595,8 @@ body {
     text-align: center;
     background: #111;
     border-radius: 0;
-    min-height: -moz-available;
-    min-height: -webkit-fill-available;
-    min-height: stretch;
+    max-height: inherit;
+    height: 100%;
 }
 
 .video-caption h3 {
@@ -1595,4 +1595,8 @@ main#main-content {
 
 footer.footer {
     flex-shrink: 0;
+}
+
+.page-wrap {
+    display: contents;
 }
