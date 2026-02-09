@@ -36,15 +36,17 @@
 
 .skip-link {
     position: absolute;
-    top: -40px;
-    left: 0;
+    top: -100%;
+    left: -100%;
     background: rgb(58 214 37);
     color: #fff;
     padding: 8px 16px;
     z-index: 10000;
     text-decoration: none;
     font-weight: 600;
-    transition: top .3s ease
+    transition: top .3s ease;
+    height: 1px;
+    width: 1px;
 }
 
 .skip-link:focus {
@@ -159,14 +161,14 @@ html {
         padding-right: 20px
     }
 
-    .hero h1 {
+    /* .hero h1 {
         font-size: 60px;
         line-height: 1
     }
 
     .hero h1 span {
         font-size: 50px
-    }
+    } */
 
     .hero1 h1,
     .hero1 h2,
@@ -177,7 +179,7 @@ html {
     }
 }
 
-@media (max-width:480px) {
+/* @media (max-width:480px) {
     .hero h1 {
         font-size: 45px;
         line-height: 1
@@ -190,7 +192,7 @@ html {
     .hero1 h1 {
         font-size: 22px !important
     }
-}
+} */
 
 body {
     background-color: #111;
@@ -225,15 +227,14 @@ footer {
         width: 100%
     }
 
-    .hero h1 {
+    /* .hero h1 {
         font-size: 12vw !important;
         line-height: 1.1
-    }
+    } */
 
-    .hero h1 span,
-    .hero1 h1 {
+    /* .hero h1 span {
         font-size: 10vw !important
-    }
+    } */
 
     .page-title__title {
         font-size: 36px
@@ -379,8 +380,8 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 {
-    font-size: 160px;
-    font-weight: 800;
+    font-size: min(160px, 20vw);
+    font-weight: 500;
     line-height: .8;
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
@@ -400,8 +401,8 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 span {
-    font-size: 150px;
-    font-weight: 700;
+    font-size: min(160px, 15vw);
+    font-weight: 600;
     color: #ccc;
     display: inline-block;
     transition: transform .3s ease, color .3s ease
@@ -534,7 +535,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, .9);
+    background: rgba(255, 255, 255, .5);
     border: none;
     color: #000;
     padding: 15px 35px;
@@ -623,7 +624,7 @@ body {
 }
 
 .hero1 {
-    padding: 40px
+    padding: 30px
 }
 
 .hero1 h1 {
@@ -830,7 +831,7 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    margin-top: 160px
+    margin-top: 1.5rem;
 }
 
 .thumbnail {
@@ -912,17 +913,14 @@ body {
 }
 
 .hero {
-    background-color: #111;
-    background-size: cover;
-    background-position: left;
     text-align: center;
-    padding: 100px 20px;
+    padding: 20px 20px 50px 20px;
     text-align: left;
     color: white
 }
 
 .hero h1 {
-    font-size: 9em;
+    /* font-size: 9em; */
     margin: 0
 }
 
@@ -931,7 +929,7 @@ body {
     margin: 20px 0;
 
     @media (width<786px) {
-        font-size: revert;
+        font-size: clamp(13px, 2vw, 16px);
     }
 }
 
