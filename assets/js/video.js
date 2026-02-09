@@ -48,6 +48,22 @@ function togglePlay(e) {
   }
 
   if (t.paused) {
+    // Pause all other playing videos
+    document.querySelectorAll(".video-item.is-playing").forEach((playingItem) => {
+      const otherVideo = playingItem.querySelector("video");
+      const otherPlayBtn = playingItem.querySelector(".play-btn");
+      if (otherVideo && otherVideo.id !== e) {
+        otherVideo.pause();
+        playingItem.classList.remove("is-playing");
+        playingItem.classList.remove("show-controls");
+        if (otherPlayBtn) otherPlayBtn.innerHTML = PLAY_ICON;
+        if (controlTimeouts[otherVideo.id]) {
+          clearTimeout(controlTimeouts[otherVideo.id]);
+          delete controlTimeouts[otherVideo.id];
+        }
+      }
+    });
+
     t.play();
     i.classList.add("is-playing");
     n.innerHTML = PAUSE_ICON;
