@@ -2,6 +2,25 @@ const PLAY_ICON =
   '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>',
   PAUSE_ICON =
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
+let controlTimeouts = {};
+
+function showControls(i) {
+  const video = i.querySelector("video");
+  if (!video) return;
+  const videoId = video.id;
+
+  i.classList.add("show-controls");
+
+  if (controlTimeouts[videoId]) {
+    clearTimeout(controlTimeouts[videoId]);
+  }
+
+  controlTimeouts[videoId] = setTimeout(() => {
+    i.classList.remove("show-controls");
+    delete controlTimeouts[videoId];
+  }, 3000);
+}
+
 function loadVideosInBackground() {
   document.querySelectorAll("video[data-src]").forEach((video) => {
     if (!video.querySelector("source")) {
@@ -28,17 +47,38 @@ function togglePlay(e) {
     t.load();
   }
 
-  t.paused
-    ? (t.play(), i.classList.add("is-playing"), (n.innerHTML = PAUSE_ICON))
-    : (t.pause(), i.classList.remove("is-playing"), (n.innerHTML = PLAY_ICON)),
-    (t.onended = function () {
-      i.classList.remove("is-playing"), (n.innerHTML = PLAY_ICON);
-    });
+  if (t.paused) {
+    t.play();
+    i.classList.add("is-playing");
+    n.innerHTML = PAUSE_ICON;
+    // Show controls briefly when starting
+    showControls(i);
+  } else {
+    t.pause();
+    i.classList.remove("is-playing");
+    i.classList.remove("show-controls");
+    n.innerHTML = PLAY_ICON;
+    if (controlTimeouts[e]) {
+      clearTimeout(controlTimeouts[e]);
+      delete controlTimeouts[e];
+    }
+  }
+
+  t.onended = function () {
+    i.classList.remove("is-playing");
+    i.classList.remove("show-controls");
+    n.innerHTML = PLAY_ICON;
+    if (controlTimeouts[e]) {
+      clearTimeout(controlTimeouts[e]);
+      delete controlTimeouts[e];
+    }
+  };
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".play-btn").forEach((e) => {
-    e.addEventListener("click", function () {
+    e.addEventListener("click", function (event) {
+      event.stopPropagation(); // Prevent thumbnail click from firing
       const video = this.closest(".video-item").querySelector("video");
       if (video && video.id) {
         togglePlay(video.id);
@@ -48,9 +88,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll(".video-thumbnail").forEach((e) => {
     const t = e.querySelector("video");
+    const i = e.closest(".video-item");
     if (t && t.id) {
       e.addEventListener("click", function (event) {
-        if (!event.target.classList.contains("play-btn")) {
+        if (event.target.classList.contains("play-btn")) return;
+
+        if (i.classList.contains("is-playing")) {
+          // If controls are already shown, a second click on the video should toggle play
+          if (i.classList.contains("show-controls")) {
+            togglePlay(t.id);
+          } else {
+            // First click on playing video just shows controls
+            showControls(i);
+          }
+        } else {
+          // If not playing, click to play
           togglePlay(t.id);
         }
       });
