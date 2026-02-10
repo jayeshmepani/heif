@@ -1,26 +1,17 @@
 .masonry-container {
-    -webkit-columns: 400px;
-    columns: 400px;
-    gap: 0;
-    width: 100%
+    /* Justified Gallery handles layout */
+    width: 100%;
+    padding: 20px;
 }
 
 .image-item,
 .video-item {
-    background: #222;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    transition: transform .3s ease, box-shadow .3s ease;
+    /* Style base item appearance */
     cursor: pointer;
-    margin: .75rem;
-    break-inside: avoid;
-    display: inline-block;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .3)
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .image-item img,
