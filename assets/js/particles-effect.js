@@ -6,8 +6,26 @@ const Config = {
   },
 };
 
+// Centralized Animation Settings
+const AnimationSettings = {
+  rotation: {
+    baseSpeed: 0.05,    // Normal rotation speed
+    scrollSpeed: 0.15,   // Fast rotation when scrolling to footer
+  },
+  layers: {
+    // Speed multipliers for each star layer (inner to outer)
+    speeds: [1.0, 0.7, 0.4],
+  },
+  mouse: {
+    sensitivity: 0.2,  // Mouse influence on rotation
+  },
+  fallback: {
+    speedMultiplier: 10, // Speed factor for 2D fallback
+  }
+};
+
 const state = {
-  starSpeedMultiplier: 0.05,
+  starSpeedMultiplier: AnimationSettings.rotation.baseSpeed,
 };
 
 // Helper to check if WebGL is available without throwing excessive errors
@@ -102,9 +120,9 @@ const Scene3D = {
       ScrollTrigger.create({
         trigger: "footer",
         start: "top bottom",
-        onEnter: () => gsap.to(state, { starSpeedMultiplier: 2.5, duration: 1 }),
+        onEnter: () => gsap.to(state, { starSpeedMultiplier: AnimationSettings.rotation.scrollSpeed, duration: 1 }),
         onLeaveBack: () =>
-          gsap.to(state, { starSpeedMultiplier: 0.05, duration: 2 }),
+          gsap.to(state, { starSpeedMultiplier: AnimationSettings.rotation.baseSpeed, duration: 2 }),
       });
     }
   },
@@ -130,14 +148,19 @@ const Scene3D = {
     const elapsed = this.clock.getElapsedTime();
 
     if (this.stars) {
+      // Layer 1
       this.stars[0].rotation.y =
-        elapsed * state.starSpeedMultiplier + this.mouseX * 0.15;
-      this.stars[0].rotation.x = this.mouseY * 0.1;
+        elapsed * state.starSpeedMultiplier * AnimationSettings.layers.speeds[0] + this.mouseX * AnimationSettings.mouse.sensitivity;
+      this.stars[0].rotation.x = this.mouseY * (AnimationSettings.mouse.sensitivity * 0.66);
+
+      // Layer 2
       this.stars[1].rotation.y =
-        elapsed * state.starSpeedMultiplier * 0.7 + this.mouseX * 0.1;
-      this.stars[1].rotation.x = this.mouseY * 0.08;
+        elapsed * state.starSpeedMultiplier * AnimationSettings.layers.speeds[1] + this.mouseX * (AnimationSettings.mouse.sensitivity * 0.66);
+      this.stars[1].rotation.x = this.mouseY * (AnimationSettings.mouse.sensitivity * 0.53);
+
+      // Layer 3
       this.stars[2].rotation.y =
-        elapsed * state.starSpeedMultiplier * 0.4 + this.mouseX * 0.05;
+        elapsed * state.starSpeedMultiplier * AnimationSettings.layers.speeds[2] + this.mouseX * (AnimationSettings.mouse.sensitivity * 0.33);
     }
 
     this.renderer.render(this.scene, this.camera);
@@ -167,7 +190,7 @@ const Scene3D = {
       x: Math.random() * width,
       y: Math.random() * height,
       size: Math.random() * 1.5 + 0.5,
-      speed: Math.random() * 0.5 + 0.1,
+      speed: Math.random() * 0.3 + 0.1,
       opacity: Math.random() * 0.7 + 0.3
     }));
 
@@ -175,7 +198,7 @@ const Scene3D = {
       ctx.clearRect(0, 0, width, height);
 
       stars.forEach(star => {
-        star.y -= star.speed * (state.starSpeedMultiplier * 20); // Sync speed somewhat with scroll state
+        star.y -= star.speed * (state.starSpeedMultiplier * AnimationSettings.fallback.speedMultiplier); // Sync speed somewhat with scroll state
         if (star.y < 0) {
           star.y = height;
           star.x = Math.random() * width;

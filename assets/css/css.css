@@ -203,7 +203,7 @@ html {
 } */
 
 body {
-    background-color: #111;
+    background-color: hsl(0, 0%, 4%);
     color: #fff;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
@@ -332,10 +332,9 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: rgba(17, 17, 17, .9);
+    background: hsla(0, 0%, 4%, 0.5);
+    backdrop-filter: blur(2px);
     z-index: 50;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     width: 100%
 }
 
@@ -489,7 +488,7 @@ body {
 }
 
 .header {
-    background-color: #000;
+    background-color: hsl(0, 0%, 0%);
     color: #fff;
     text-align: center;
     padding: 50px 20px
@@ -519,7 +518,7 @@ body {
 
 .video-item {
     position: relative;
-    background-color: #111;
+    background-color: hsl(0, 0%, 4%);
     border-radius: 20px;
     overflow: hidden;
     transition: transform .3s ease, box-shadow .3s ease;
@@ -552,7 +551,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .2);
     border: none;
     color: #000;
     padding: 15px 35px;
@@ -578,7 +577,7 @@ body {
 .play-btn:hover {
     background: #fff;
     transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, .5)
+    box-shadow: 0 8px 25px rgba(255, 255, 255, .3)
 }
 
 .video-item.is-playing .play-btn {
@@ -631,7 +630,7 @@ body {
 .video-caption {
     padding: 25px;
     text-align: center;
-    background: #111;
+    background: hsl(0, 0%, 4%);
     border-radius: 0;
     max-height: inherit;
     height: 100%;
@@ -653,7 +652,7 @@ body {
 }
 
 body {
-    background-color: #111;
+    background-color: hsl(0, 0%, 4%);
     color: #fff;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -1031,7 +1030,8 @@ body {
 }
 
 .footer {
-    background: linear-gradient(180deg, #0a0a0a, #000);
+    background: linear-gradient(180deg, hsla(0, 0%, 2%, 0.7), hsla(0, 0%, 0%, 0.7));
+    backdrop-filter: blur(2px);
     color: #fff;
     padding: 30px 20px 20px;
     margin-top: 0;
