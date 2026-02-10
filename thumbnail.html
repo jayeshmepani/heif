@@ -27,10 +27,17 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logow.png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/css.css">
+    <link rel="stylesheet" href="assets/css/css.css" />
     <link rel="stylesheet" href="assets/css/masonry.css">
     <link rel="stylesheet" href="assets/css/cursor.css">
+    <script src="assets/vendor/three.min.js" defer></script>
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <!-- <script src="assets/js/particles.js" defer></script> -->
+    <script src="assets/js/scroll-animations.js" defer></script>
+    <script src="assets/js/particles-effect.js" defer></script>
 </head>
 
 <body>
@@ -42,7 +49,8 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Decorative Background -->
+    <canvas id="webgl-canvas"></canvas>
+
     <div class="stars-layer">
         <div class="stars-extra"></div>
     </div>
@@ -119,11 +127,6 @@
         </div>
     </footer>
 
-    <!-- Scripts with defer for performance -->
-    <script src="assets/js/script.js" defer></script>
-    <script src="assets/js/particles.js" defer></script>
-    <script src="assets/js/lenis.min.js" defer></script>
-    <script src="assets/js/scroll-animations.js" defer></script>
     <script>
         window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');

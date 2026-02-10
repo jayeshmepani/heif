@@ -139,3 +139,35 @@ navToggle &&
     navToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
   });
+
+// Mobile menu functionality for the refined about page
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenuBtn = document.getElementById('close-menu-btn');
+
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    mobileMenu.classList.toggle('translate-x-full');
+    document.body.classList.toggle('overflow-hidden');
+  });
+}
+
+if (closeMenuBtn && mobileMenu) {
+  closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('translate-x-full');
+    document.body.classList.remove('overflow-hidden');
+  });
+}
+
+// Close mobile menu when clicking on a link
+if (mobileMenu) {
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    });
+  });
+}
+

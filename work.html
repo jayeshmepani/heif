@@ -28,9 +28,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logow.png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/css.css">
-    <link rel="stylesheet" href="assets/css/cursor.css">
+    <link rel="stylesheet" href="assets/css/css.css" />
+    <link rel="stylesheet" href="assets/css/cursor.css" />
+    <script src="assets/vendor/three.min.js" defer></script>
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <!-- <script src="assets/js/particles.js" defer></script> -->
+    <script src="assets/js/scroll-animations.js" defer></script>
+    <script src="assets/js/particles-effect.js" defer></script>
 </head>
 
 <body>
@@ -42,10 +49,11 @@
         <div class="loader"></div>
     </div>
 
+    <canvas id="webgl-canvas"></canvas>
+
     <div class="stars-layer">
         <div class="stars-extra"></div>
     </div>
-
     <!-- Header -->
     <header role="banner">
         <div class="header__logo">
@@ -137,8 +145,8 @@
         <div class="footer-container">
             <div class="footer-logo-container">
                 <a href="index.html" aria-label="HEIF Artist Home">
-                    <img src="assets/img/logo.png" alt="HEIF Artist Logo" class="footer-logo"
-                    loading="lazy" decoding="async">
+                    <img src="assets/img/logo.png" alt="HEIF Artist Logo" class="footer-logo" loading="lazy"
+                        decoding="async">
                 </a>
             </div>
             <div class="footer-home">
@@ -154,12 +162,6 @@
                     target="_blank" rel="noopener noreferrer">Jayesh Mepani</a></p>
         </div>
     </footer>
-
-    <!-- Scripts with defer for performance -->
-    <script src="assets/js/script.js" defer></script>
-    <script src="assets/js/particles.js" defer></script>
-    <script src="assets/js/lenis.min.js" defer></script>
-    <script src="assets/js/scroll-animations.js" defer></script>
     <script>
         window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');

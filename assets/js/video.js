@@ -18,7 +18,7 @@ function showControls(i) {
   controlTimeouts[videoId] = setTimeout(() => {
     i.classList.remove("show-controls");
     delete controlTimeouts[videoId];
-  }, 1000);
+  }, 700);
 }
 
 function loadVideosInBackground() {
