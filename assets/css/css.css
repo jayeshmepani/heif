@@ -170,19 +170,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgb(58 214 37), rgb(58 214 37));
+    background: linear-gradient(180deg, var(--mix-code), var(--mix-code));
     border-radius: 10px;
     border: 2px solid #0a0a0a
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgb(58 214 37), rgb(58 214 37))
+    background: linear-gradient(180deg, var(--mix-code), var(--mix-code))
 }
 
 @supports (scrollbar-width:thin) {
     * {
         scrollbar-width: thin;
-        scrollbar-color: rgb(58 214 37) #0a0a0a
+        scrollbar-color: var(--mix-code) #0a0a0a
     }
 }
 
@@ -204,7 +204,7 @@ h1:not(.hero h1, #profile-heading) {
     position: absolute;
     top: -100%;
     left: -100%;
-    background: rgb(58 214 37);
+    background: var(--mix-code);
     color: #fff;
     padding: 8px 16px;
     z-index: 10000;
@@ -266,7 +266,7 @@ h1:not(.hero h1, #profile-heading) {
     inset: 0;
     border-radius: 50px;
     padding: 1px;
-    background: linear-gradient(135deg, rgb(58 214 37), rgb(58 214 37), rgb(58 214 37));
+    background: linear-gradient(135deg, var(--mix-code), var(--mix-code), var(--mix-code));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -280,10 +280,10 @@ h1:not(.hero h1, #profile-heading) {
 }
 
 .role-badge:hover {
-    background: rgba(58, 214, 37, .15);
+    background: rgba(30, 194, 77, .15);
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(58, 214, 37, .3);
-    color: rgb(58 214 37)
+    box-shadow: 0 15px 40px rgba(30, 194, 77, .3);
+    color: var(--mix-code)
 }
 
 .role-badge svg {
@@ -294,7 +294,7 @@ h1:not(.hero h1, #profile-heading) {
 .role-badge:hover svg {
     opacity: 1;
     transform: rotate(10deg) scale(1.2);
-    color: rgb(58 214 37)
+    color: var(--mix-code)
 }
 
 @media (max-width:768px) {
@@ -480,7 +480,7 @@ footer {
     width: 50px;
     height: 50px;
     border: 3px solid #333;
-    border-top: 3px solid rgb(58 214 37);
+    border-top: 3px solid var(--mix-code);
     border-radius: 50%;
     animation: spin 1s linear infinite
 }
@@ -542,7 +542,7 @@ header nav ul li a::after {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, rgb(58 214 37), rgb(58 214 37));
+    background: linear-gradient(90deg, var(--mix-code), var(--mix-code));
     transition: all .3s ease;
     transform: translateX(-50%)
 }
@@ -598,7 +598,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 span:hover {
-    color: #00FF00;
+    color: var(--mix-code);
     transform: translateX(10px)
 }
 
@@ -766,16 +766,16 @@ body {
         opacity: 1;
         visibility: visible;
         transform: translate(-50%, -50%) scale(1);
-        background: rgba(58, 214, 37, .3);
+        background: rgba(30, 194, 77, .3);
         backdrop-filter: blur(5px);
         color: #fff;
         pointer-events: auto;
     }
 
     .video-item.is-playing:hover .play-btn:hover {
-        background: rgb(58 214 37);
+        background: var(--mix-code);
         transform: translate(-50%, -50%) scale(1.1);
-        box-shadow: 0 8px 25px rgba(58, 214, 37, .5)
+        box-shadow: 0 8px 25px rgba(30, 194, 77, .5)
     }
 }
 
@@ -784,16 +784,16 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
-    background: rgba(58, 214, 37, .3);
+    background: rgba(30, 194, 77, .3);
     backdrop-filter: blur(5px);
     color: #fff;
     pointer-events: auto;
 }
 
 .video-item.is-playing.show-controls .play-btn:hover {
-    background: rgb(58 214 37);
+    background: var(--mix-code);
     transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 8px 25px rgba(58, 214, 37, .3)
+    box-shadow: 0 8px 25px rgba(30, 194, 77, .3)
 }
 
 .play-btn i {
@@ -937,7 +937,7 @@ body {
 .contact-title {
     font-family: var(--font-heading);
     font-size: 48px;
-    color: rgb(58 214 37);
+    color: var(--mix-code);
     margin-bottom: 60px;
     letter-spacing: 2px;
     text-transform: uppercase
@@ -962,7 +962,7 @@ body {
 
 .icon-box {
     font-size: 32px;
-    color: rgb(58 214 37);
+    color: var(--mix-code);
     margin-bottom: 10px
 }
 
@@ -983,7 +983,7 @@ body {
 }
 
 .contact-item p a:hover {
-    color: rgb(58 214 37)
+    color: var(--mix-code)
 }
 
 @media (max-width:768px) {
@@ -1221,7 +1221,7 @@ body {
     transform: translateX(-50%);
     width: 600px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(58, 214, 37, .5), transparent)
+    background: linear-gradient(90deg, transparent, rgba(30, 194, 77, .5), transparent)
 }
 
 .footer-container {
@@ -1275,7 +1275,7 @@ body {
     text-transform: uppercase;
     color: #fff;
     background: transparent;
-    border: 1px solid rgb(58 214 37);
+    border: 1px solid var(--mix-code);
     border-radius: 6px;
     text-decoration: none;
     overflow: hidden;
@@ -1283,8 +1283,8 @@ body {
 }
 
 .footer-btn:hover {
-    background: rgb(58 214 37);
-    box-shadow: 0 0 30px 5px rgba(58, 214, 37, .5);
+    background: var(--mix-code);
+    box-shadow: 0 0 30px 5px rgba(30, 194, 77, .5);
     transform: translateY(-3px)
 }
 
@@ -1350,7 +1350,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, rgb(58 214 37), rgb(58 214 37));
+    background: linear-gradient(90deg, var(--mix-code), var(--mix-code));
     transition: width .3s ease
 }
 
@@ -1377,13 +1377,13 @@ body {
 }
 
 .developer-credit a {
-    color: rgb(58 214 37);
+    color: var(--mix-code);
     text-decoration: none;
     transition: color .3s ease
 }
 
 .developer-credit a:hover {
-    color: rgb(58 214 37)
+    color: var(--mix-code)
 }
 
 .footer-rights p {
@@ -1438,17 +1438,17 @@ body {
     text-align: center;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(58, 214, 37, .3)
+    text-shadow: 0 0 20px rgba(30, 194, 77, .3)
 }
 
 .skill-item {
-    margin-bottom: 35px
+    margin-bottom: 22px
 }
 
 .skill-info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -1456,7 +1456,7 @@ body {
 }
 
 .skill-percentage {
-    color: rgb(58 214 37)
+    color: var(--mix-code)
 }
 
 .skill-bar {
@@ -1473,8 +1473,8 @@ body {
     position: relative;
     height: 100%;
     border-radius: 20px;
-    background: linear-gradient(90deg, rgb(58 214 37), rgba(58, 214, 37, 0.8));
-    box-shadow: 0 0 20px rgba(58, 214, 37, .6);
+    background: linear-gradient(90deg, var(--mix-code), rgba(30, 194, 77, 0.8));
+    box-shadow: 0 0 20px rgba(30, 194, 77, .6);
     width: 0;
     animation: fillUp 1.5s cubic-bezier(.175, .885, .32, 1.275) forwards
 }
@@ -1571,15 +1571,15 @@ body {
 
 @keyframes glowPulse {
     0% {
-        box-shadow: 0 0 15px rgba(58, 214, 37, .5)
+        box-shadow: 0 0 15px rgba(30, 194, 77, .5)
     }
 
     50% {
-        box-shadow: 0 0 25px rgba(58, 214, 37, .8)
+        box-shadow: 0 0 25px rgba(30, 194, 77, .8)
     }
 
     100% {
-        box-shadow: 0 0 15px rgba(58, 214, 37, .5)
+        box-shadow: 0 0 15px rgba(30, 194, 77, .5)
     }
 }
 
@@ -1671,12 +1671,12 @@ html.lenis body {
 }
 
 header nav ul li a[aria-current="page"] {
-    color: rgb(58 214 37);
+    color: var(--mix-code);
     font-weight: 700
 }
 
 header nav ul li a:hover {
-    color: rgb(58 214 37)
+    color: var(--mix-code)
 }
 
 .nav-toggle {
@@ -1863,9 +1863,9 @@ footer.footer {
 }
 
 .btn.primary {
-    background: linear-gradient(90deg, rgb(58 214 37), #3bdc4a);
+    background: linear-gradient(90deg, var(--mix-code), #3bdc4a);
     color: #051105;
-    box-shadow: 0 8px 30px rgba(58, 214, 37, 0.15);
+    box-shadow: 0 8px 30px rgba(30, 194, 77, 0.15);
 }
 
 .btn.ghost {
@@ -1887,13 +1887,14 @@ footer.footer {
     z-index: 1;
     border-radius: 20px;
     padding: 5px;
-    background: linear-gradient(135deg, rgba(58, 214, 37, 0.4), rgba(0, 0, 0, 0));
+    background: linear-gradient(135deg, rgba(30, 194, 77, 0.4), rgba(0, 0, 0, 0));
 }
 
 .about-photo img {
     width: 320px;
     max-width: 100%;
     border-radius: 16px;
+    padding-top: 0.5rem;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     display: block;
     transform: translateZ(0);
@@ -1904,7 +1905,7 @@ footer.footer {
     content: '';
     position: absolute;
     inset: -15px;
-    background: radial-gradient(circle, rgba(58, 214, 37, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(30, 194, 77, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
     filter: blur(20px);
     z-index: -1;
     opacity: 0.6;
@@ -1946,10 +1947,12 @@ footer.footer {
 /* timeline */
 /* timeline - reference design */
 :root {
-    --emerald: rgb(58, 214, 37);
+    --emerald: hsl(160, 84%, 39%);
     --teal-dark: #2e7d32;
     --lavender: #bfe7bf;
-    --emerald-light: #10b981;
+    --primary: hsl(113, 71%, 49%);
+    --mix: color-mix(in srgb, var(--primary), var(--emerald));
+    --mix-code: rgb(30, 194, 77);
 }
 
 .timeline-container {
@@ -1969,7 +1972,7 @@ footer.footer {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, rgba(58, 214, 37, 0.1) 0%, rgba(58, 214, 37, 0.8) 50%, rgba(58, 214, 37, 0.1) 100%);
+    background: linear-gradient(to bottom, rgba(30, 194, 77, 0.1) 0%, rgba(30, 194, 77, 0.8) 50%, rgba(30, 194, 77, 0.1) 100%);
     transform: translateX(-50%);
     z-index: 0;
 }
@@ -2006,9 +2009,9 @@ footer.footer {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--emerald-light);
+    background: var(--mix-code);
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px var(--emerald-light);
+    box-shadow: 0 0 15px var(--mix-code);
     position: relative;
     z-index: 1;
     justify-self: center;
@@ -2020,7 +2023,7 @@ footer.footer {
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    border: 1px solid var(--emerald-light);
+    border: 1px solid var(--mix-code);
     opacity: .5;
     animation: pulse-ring 2s infinite;
 }
@@ -2086,7 +2089,7 @@ footer.footer {
     .mobile-date {
         display: block;
         font-size: 0.75rem;
-        color: var(--emerald-light);
+        color: var(--mix-code);
         letter-spacing: 0.1em;
         margin-top: 0.5rem;
         font-weight: 700;
@@ -2113,7 +2116,7 @@ footer.footer {
 
 .edu-card p:last-child {
     font-size: 1rem;
-    color: #3ae025;
+    color: var(--mix-code);
     font-weight: 600;
 }
 
@@ -2122,7 +2125,7 @@ footer.footer {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, #3ae025, #2dd4bf);
+    background: linear-gradient(90deg, var(--mix-code), #2dd4bf);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2132,7 +2135,7 @@ footer.footer {
 .subheading {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #3ae025;
+    color: var(--mix-code);
     margin-bottom: 1.5rem;
 }
 
@@ -2158,7 +2161,7 @@ footer.footer {
     font-family: var(--font-body);
     font-weight: 900;
     text-align: center;
-    background: linear-gradient(to right, #fff, #3ae025, #2dd4bf);
+    background: linear-gradient(to right, #fff, var(--mix-code), #2dd4bf);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2168,11 +2171,11 @@ footer.footer {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 5px #fff, 0 0 10px #3ae025, 0 0 15px #2dd4bf;
+        text-shadow: 0 0 5px #fff, 0 0 10px var(--mix-code), 0 0 15px #2dd4bf;
     }
 
     to {
-        text-shadow: 0 0 10px #fff, 0 0 20px #3ae025, 0 0 30px #2dd4bf;
+        text-shadow: 0 0 10px #fff, 0 0 20px var(--mix-code), 0 0 30px #2dd4bf;
     }
 }
 
@@ -2182,7 +2185,7 @@ footer.footer {
     box-shadow: 0 10px 20px rgba(15, 0, 20, 0.5);
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-    background-color: #2e7d32;
+    /* background: var(--mix-code); */
     border-radius: 9999px;
     display: flex;
     align-items: center;
@@ -2190,7 +2193,7 @@ footer.footer {
     color: white;
     gap: 10px;
     font-weight: bold;
-    border: 3px solid rgba(45, 212, 191, 0.3);
+    border: 3px solid rgba(30, 194, 77, 0.3);
     outline: none;
     overflow: hidden;
     font-size: 15px;
@@ -2200,7 +2203,7 @@ footer.footer {
 
 .button:hover {
     transform: scale(1.05);
-    border-color: #3ae025;
+    border-color: var(--mix-code);
     text-decoration: none;
     color: white;
 }
@@ -2214,7 +2217,7 @@ footer.footer {
     position: absolute;
     width: 100px;
     height: 100%;
-    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, #3ae025, rgba(255, 255, 255, 0) 70%);
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, var(--mix-code), rgba(255, 255, 255, 0) 70%);
     top: 0;
     left: -100px;
     opacity: 0.6;
@@ -2232,14 +2235,14 @@ footer.footer {
 
 .button.ghost {
     background-color: transparent;
-    border: 2px solid rgba(58, 214, 37, 0.5);
+    border: 2px solid rgba(30, 194, 77, 0.5);
     box-shadow: none;
 }
 
 .button.ghost:hover {
-    background-color: rgba(58, 214, 37, 0.1);
-    border-color: #3ae025;
-    box-shadow: 0 0 20px rgba(58, 214, 37, 0.3);
+    background-color: rgba(30, 194, 77, 0.1);
+    border-color: var(--mix-code);
+    box-shadow: 0 0 20px rgba(30, 194, 77, 0.3);
 }
 
 @keyframes shine {
@@ -2273,12 +2276,12 @@ footer.footer {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #3ae025, #2dd4bf);
+    background: linear-gradient(90deg, var(--mix-code), #2dd4bf);
     transition: width 0.3s ease;
 }
 
 .nav-link-desktop:hover {
-    color: #3ae025;
+    color: var(--mix-code);
     letter-spacing: 0.1em;
 }
 
@@ -2303,12 +2306,12 @@ footer.footer {
     left: 0;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #3ae025, #2dd4bf);
+    background: linear-gradient(90deg, var(--mix-code), #2dd4bf);
     transition: width 0.3s ease;
 }
 
 .nav-link-mobile:hover {
-    color: #3ae025;
+    color: var(--mix-code);
 }
 
 .nav-link-mobile:hover::after {
@@ -2355,21 +2358,26 @@ footer.footer {
 
 /* 1. Define the animation */
 @keyframes grow-progress {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
 }
 
 .scroll-tracker {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: #50C878;
-  transform-origin: left;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #50C878;
+    transform-origin: left;
+    z-index: 1000;
 
-  /* 2. Bind to scroll */
-  animation: grow-progress auto linear;
-  animation-timeline: scroll();
+    /* 2. Bind to scroll */
+    animation: grow-progress auto linear;
+    animation-timeline: scroll();
 }
