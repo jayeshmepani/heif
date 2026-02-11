@@ -397,7 +397,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 {
-    font-size: min(200px, 20vw);
+    font-size: min(185px, 20vw);
     font-weight: 500;
     line-height: .8;
     opacity: 0;
@@ -418,7 +418,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 span {
-    font-size: min(200px, 16vw);
+    font-size: min(185px, 16vw);
     font-weight: 600;
     color: #ccc;
     display: inline-block;
@@ -1036,7 +1036,7 @@ body {
     background: linear-gradient(180deg, hsla(0, 0%, 2%, 0.7), hsla(0, 0%, 0%, 0.7));
     backdrop-filter: blur(2px);
     color: #fff;
-    padding: 30px 20px 20px;
+    padding: 20px 30px;
     margin-top: 0;
     border-top: 1px solid rgba(255, 255, 255, .05);
     position: relative;
@@ -1089,6 +1089,7 @@ body {
 .footer-home {
     flex: 1;
     text-align: center;
+    display: contents;
 
     @media (width < 768px) {
         display: none;
@@ -1098,7 +1099,7 @@ body {
 .footer-btn {
     position: relative;
     display: inline-block;
-    padding: 14px 40px;
+    padding: 7px 14px;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
