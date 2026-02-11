@@ -1,3 +1,154 @@
+/* Font Definitions */
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_Book.otf') format('opentype');
+    font-weight: 350;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Halyard Display';
+    src: url('../FOnts/Halyard_Display_Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Phonk Contrast';
+    src: url('../FOnts/Phonk Contrast DEMO.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic variants */
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../FOnts/JosefinSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --font-heading: 'Phonk Contrast', 'Arial Black', sans-serif;
+    --font-body: 'Josefin Sans', 'Arial', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +184,20 @@
         scrollbar-width: thin;
         scrollbar-color: rgb(58 214 37) #0a0a0a
     }
+}
+
+h1:not(.hero h1, #profile-heading) {
+    font-family: var(--font-heading);
+}
+
+/* #hero-heading{
+    font-family: 'Halyard Display', sans-serif;
+    font-weight: 400; 
+} */
+
+#hero-heading {
+    font-family: 'Halyard Display', sans-serif;
+    font-weight: 300;
 }
 
 .skip-link {
@@ -206,10 +371,14 @@ html {
 body {
     background-color: hsl(0, 0%, 4%);
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+
+    &#home-page {
+        font-family: 'Arial', sans-serif;
+    }
 }
 
 html,
@@ -397,12 +566,15 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 {
+    /* font-family: var(--font-heading); */
     font-size: min(185px, 20vw);
     font-weight: 500;
     line-height: .8;
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
-    animation-delay: .5s
+    animation-delay: .5s;
+    letter-spacing: -2px;
+    /* Phonk often looks better with tight spacing */
 }
 
 @keyframes fadeInUp {
@@ -462,7 +634,6 @@ header nav ul li a:hover::after {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333
 }
@@ -484,7 +655,6 @@ body {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #1a1a1a;
     color: #fff;
     line-height: 1.6
@@ -657,7 +827,6 @@ body {
 body {
     background-color: hsl(0, 0%, 4%);
     color: #fff;
-    font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0
@@ -743,9 +912,12 @@ body {
 }
 
 .page-title__title {
+    font-family: var(--font-heading);
     font-size: 60px;
     margin-bottom: 40px;
-    margin-top: 110px
+    margin-top: 110px;
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
 .contact-section {
@@ -763,6 +935,7 @@ body {
 }
 
 .contact-title {
+    font-family: var(--font-heading);
     font-size: 48px;
     color: rgb(58 214 37);
     margin-bottom: 60px;
@@ -833,7 +1006,7 @@ body {
     display: none
 }
 
-@media (max-width:991px) {
+@media (max-width:768px) {
     .nav-toggle {
         display: block;
         margin-right: 20px
@@ -859,10 +1032,6 @@ body {
         display: block;
         margin: 15px 0
     }
-}
-
-body {
-    font-family: Arial, sans-serif
 }
 
 .portfolio-container {
@@ -1780,6 +1949,7 @@ footer.footer {
     --emerald: rgb(58, 214, 37);
     --teal-dark: #2e7d32;
     --lavender: #bfe7bf;
+    --emerald-light: #10b981;
 }
 
 .timeline-container {
@@ -1824,7 +1994,7 @@ footer.footer {
 
 .timeline-date {
     text-align: right;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     color: var(--lavender);
     font-size: .85rem;
     letter-spacing: .05em;
@@ -1836,9 +2006,9 @@ footer.footer {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--emerald);
+    background: var(--emerald-light);
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px var(--emerald);
+    box-shadow: 0 0 15px var(--emerald-light);
     position: relative;
     z-index: 1;
     justify-self: center;
@@ -1850,7 +2020,7 @@ footer.footer {
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    border: 1px solid var(--emerald);
+    border: 1px solid var(--emerald-light);
     opacity: .5;
     animation: pulse-ring 2s infinite;
 }
@@ -1916,7 +2086,7 @@ footer.footer {
     .mobile-date {
         display: block;
         font-size: 0.75rem;
-        color: var(--emerald);
+        color: var(--emerald-light);
         letter-spacing: 0.1em;
         margin-top: 0.5rem;
         font-weight: 700;
@@ -1985,7 +2155,7 @@ footer.footer {
 }
 
 .hero-title {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     font-weight: 900;
     text-align: center;
     background: linear-gradient(to right, #fff, #3ae025, #2dd4bf);
@@ -2087,7 +2257,7 @@ footer.footer {
 }
 
 .nav-link-desktop {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.875rem;
     letter-spacing: 0.025em;
     transition: all 0.3s ease;
@@ -2117,7 +2287,7 @@ footer.footer {
 }
 
 .nav-link-mobile {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.875rem;
     font-weight: 700;
     color: white;
@@ -2181,4 +2351,25 @@ footer.footer {
 .text-trim {
     text-box-edge: ex alphabetic;
     text-box-trim: trim-both;
+}
+
+/* 1. Define the animation */
+@keyframes grow-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.scroll-tracker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #50C878;
+  transform-origin: left;
+  z-index: 1000;
+
+  /* 2. Bind to scroll */
+  animation: grow-progress auto linear;
+  animation-timeline: scroll();
 }

@@ -1,80 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
+/* Optimized Native Cursor */
+html,
 body {
-    /* cursor: none */
+    cursor: url('../ICONS WEB/Mouse_Cursor.svg') 16 16, auto;
 }
 
 a,
 button,
-.hover-text,
-.nav-toggle {
-    /* cursor: none */
+.clickable,
+.hover-link {
+    cursor: url('../ICONS WEB/Mouse_Cursor.svg') 16 16, pointer;
 }
 
-#custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform .1s ease
-}
-
-#custom-cursor::before {
-    content: 'H';
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: #00FF00;
-    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
-    transform: scaleX(1.2) skewX(-10deg)
-}
-
+/* Legacy cursor elements hidden/removed */
+#custom-cursor,
 .cursor-trail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 6px;
-    background-color: rgba(0, 255, 0, .4);
-    box-shadow: 0 0 5px #00FF00;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: width .2s, height .2s, opacity .2s
-}
-
-body.hovering #custom-cursor {
-    transform: translate(-50%, -50%) scale(1.5)
-}
-
-body.hovering #custom-cursor::before {
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #00FF00
-}
-
-body.hovering .cursor-trail {
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    border: 1px dashed #00FF00;
-    box-shadow: 0 0 10px #00FF00 inset;
-    animation: rotateTrail 4s linear infinite
-}
-
-@keyframes rotateTrail {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg)
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg)
-    }
+    display: none !important;
 }
