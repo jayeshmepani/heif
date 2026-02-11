@@ -127,11 +127,27 @@
         </div>
     </footer>
 
+    <link rel="stylesheet" href="assets/vendor/justifiedGallery.min.css" />
+    <script src="assets/vendor/jquery.min.js"></script>
+    <script src="assets/vendor/jquery.justifiedGallery.min.js"></script>
     <script>
         window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
             setTimeout(() => { preloader.style.display = 'none'; }, 500);
+        });
+
+        $(document).ready(function () {
+            $(".flex-container").addClass("masonry-container").removeClass("flex-container");
+            $(".masonry-container").justifiedGallery({
+                rowHeight: 350,
+                maxRowHeight: 800,
+                justifyThreshold: 0.1,
+                margins: 15,
+                border: 0,
+                lastRow: "center",
+                captions: false,
+            });
         });
     </script>
 </body>

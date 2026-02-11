@@ -17,7 +17,7 @@ body {
 
 .profile-section {
     margin-bottom: 50px;
-    margin-top: 60px;
+    margin-top: 100px;
     text-align: center
 }
 
@@ -250,9 +250,5 @@ body {
 
     .name {
         font-size: 24px
-    }
-
-    .profile-section {
-        margin-top: 40px
     }
 }

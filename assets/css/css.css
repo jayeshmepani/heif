@@ -5,7 +5,8 @@
     /* cursor: none; */
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -330,9 +331,10 @@ header {
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     background: hsla(0, 0%, 4%, 0.5);
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     z-index: 50;
     width: 100%
@@ -387,14 +389,15 @@ header nav ul li a:hover::after {
 .hero {
     text-align: left;
     padding: 90px 0;
-    padding-left: 80px;
+    padding-top: 100px;
+    padding-left: 30px;
     background-color: transparent;
     position: relative;
     z-index: 10
 }
 
 .hero h1 {
-    font-size: min(9rem, 20vw);
+    font-size: min(200px, 20vw);
     font-weight: 500;
     line-height: .8;
     opacity: 0;
@@ -415,7 +418,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 span {
-    font-size: min(150px, 16vw);
+    font-size: min(200px, 16vw);
     font-weight: 600;
     color: #ccc;
     display: inline-block;
@@ -742,11 +745,12 @@ body {
 .page-title__title {
     font-size: 60px;
     margin-bottom: 40px;
-    margin-top: 10px
+    margin-top: 110px
 }
 
 .contact-section {
     padding: 100px 20px;
+    margin-top: 100px;
     text-align: center;
     background-color: transparent;
     position: relative;
@@ -868,7 +872,7 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    margin-top: 1.5rem;
+    margin-top: calc(100px + 1.5rem);
 }
 
 .thumbnail {
@@ -936,7 +940,6 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
     transition: transform .3s ease;
-    padding-bottom: 30px
 }
 
 .image-item:hover {
@@ -944,14 +947,14 @@ body {
 }
 
 .image-item img {
-    width: 60%;
+    width: 100%;
     height: auto;
     border-radius: 15px
 }
 
 .hero {
     text-align: center;
-    padding: 20px 20px 50px 20px;
+    /* padding: 20px 20px 50px 20px; */
     text-align: left;
     color: white
 }
@@ -966,7 +969,7 @@ body {
     margin: 20px 0;
 
     @media (width<786px) {
-        font-size: clamp(13px, 2vw, 16px);
+        font-size: clamp(12px, 2vw, 15px);
     }
 }
 
@@ -1059,7 +1062,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, .05)
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+
+    @media (width < 768px) {
+        padding-bottom: 10px;
+    }
 }
 
 .footer-logo-container {
@@ -1187,14 +1194,14 @@ body {
 
 .footer-rights {
     text-align: center;
-    padding-top: 15px;
+    margin-block: 10px -10px;
     color: #333;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 1px
 }
 
 .developer-credit {
-    margin-top: 8px;
+    margin-top: 5px;
     font-size: 11px;
     color: #444
 }
@@ -1219,12 +1226,12 @@ body {
 
 @media (max-width:768px) {
     .footer {
-        padding: 25px 15px 15px
+        padding: 15px;
     }
 
     .footer-container {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         text-align: center
     }
 
@@ -1514,7 +1521,9 @@ header nav ul li a:hover {
 
 @media (max-width:768px) {
     header {
-        position: relative
+        position: fixed;
+        background: hsla(0, 0%, 4%, 0.9);
+        /* Darker background on mobile for better visibility when scrolling */
     }
 
     .nav-toggle {
@@ -1643,6 +1652,7 @@ footer.footer {
 /* About section styles */
 .about-section {
     padding: 80px 20px;
+    margin-top: 100px;
     color: #fff;
 }
 
@@ -2160,4 +2170,14 @@ footer.footer {
     .subheading {
         font-size: 1.5rem;
     }
+}
+
+.logo-link {
+    max-height: min-content;
+    display: flex;
+}
+
+.text-trim {
+    text-box-edge: ex alphabetic;
+    text-box-trim: trim-both;
 }

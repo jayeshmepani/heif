@@ -1,7 +1,14 @@
 .masonry-container {
     /* Justified Gallery handles layout */
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 20px;
+    translate: 21px 0;
+
+    .wil-content {
+        margin-top: 100px;
+    }
 }
 
 .image-item,

@@ -258,10 +258,11 @@
                 $(document).ready(function () {
                         $(".masonry-container").justifiedGallery({
                                 rowHeight: 350,
-                                maxRowHeight: 500,
-                                margins: 10,
+                                maxRowHeight: 800,
+                                justifyThreshold: 0.1,
+                                margins: 15,
                                 border: 0,
-                                lastRow: "nojustify",
+                                lastRow: "center",
                                 captions: false,
                         });
                 });
