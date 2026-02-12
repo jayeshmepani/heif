@@ -913,7 +913,7 @@ body {
 
 .page-title__title {
     font-family: var(--font-heading);
-    font-size: 60px;
+    font-size: clamp(2.5rem, 8vw, 60px);
     margin-bottom: 40px;
     margin-top: 110px;
     text-transform: uppercase;
@@ -957,7 +957,19 @@ body {
     align-items: center;
     gap: 15px;
     flex: 1;
-    min-width: 250px
+    min-width: 250px;
+    border: 1px solid var(--mix);
+    padding: 1rem 0;
+    border-radius: 2.5rem;
+    corner-shape: bevel;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: rgb(30 194 77 / 31%);
+        color: #fff;
+        backdrop-filter: blur(1px);
+        transition: all .3s ease-in-out;
+    }
 }
 
 .icon-box {
@@ -2380,4 +2392,69 @@ footer.footer {
     /* 2. Bind to scroll */
     animation: grow-progress auto linear;
     animation-timeline: scroll();
+}
+
+.clothing-showcase .image-item {
+    box-shadow: none;
+
+    &:hover {
+        box-shadow: none;
+    }
+
+    &::before {
+        display: none;
+    }
+}
+
+.contact-info * {
+    text-decoration: none;
+}
+
+#clothing-showcase h2.page-title__title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--mix-code);
+    background: rgb(30 194 77 / 11%);
+    backdrop-filter: blur(1px);
+    text-box-edge: text alphabetic;
+    text-box-trim: trim-both;
+    padding-block: 1rem;
+}
+
+.hover-image {
+    transition: all 0.5s ease-in-out;
+
+    @starting-style {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+}
+
+.role-badge:hover img {
+    transform: scale(1.1) rotate(15deg);
 }
