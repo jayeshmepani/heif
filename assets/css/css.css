@@ -1291,7 +1291,10 @@ body {
     border-radius: 6px;
     text-decoration: none;
     overflow: hidden;
-    transition: all .3s ease
+    transition: all .3s ease;
+    text-box-trim: trim-both;
+    text-box-edge: text alphabetic;
+    padding-block: 0.75rem;
 }
 
 .footer-btn:hover {
