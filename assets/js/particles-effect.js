@@ -90,6 +90,26 @@ const Scene3D = {
   },
 
   createObjects() {
+    // Generate a soft circle texture to replace default square points
+    const circleTexture = (() => {
+      const size = 64;
+      const cnv = document.createElement('canvas');
+      cnv.width = size;
+      cnv.height = size;
+      const ctx = cnv.getContext('2d');
+      const half = size / 2;
+      const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
+      gradient.addColorStop(0, 'rgba(255,255,255,1)');
+      gradient.addColorStop(0.3, 'rgba(255,255,255,0.8)');
+      gradient.addColorStop(0.7, 'rgba(255,255,255,0.15)');
+      gradient.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+      const tex = new THREE.CanvasTexture(cnv);
+      tex.needsUpdate = true;
+      return tex;
+    })();
+
     const createStars = (count, size, spread, opacity) => {
       const geo = new THREE.BufferGeometry();
       const pos = new Float32Array(count * 3);
@@ -104,13 +124,17 @@ const Scene3D = {
           transparent: true,
           opacity,
           sizeAttenuation: true,
+          map: circleTexture,
+          alphaMap: circleTexture,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
         }),
       );
     };
     this.stars = [
       createStars(1500, 0.05, 80, 0.9),
-      createStars(1000, 0.08, 120, 0.6),
-      createStars(500, 0.12, 150, 0.3),
+      createStars(1000, 0.07, 120, 0.6),
+      createStars(500, 0.10, 150, 0.3),
     ];
     this.scene.add(...this.stars);
   },

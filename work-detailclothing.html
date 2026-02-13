@@ -38,12 +38,12 @@
 
     <script src="assets/js/scroll-animations.js" defer></script>
     <script src="assets/js/particles-effect.js" defer></script>
-    <link rel="stylesheet" href="assets/vendor/justifiedGallery.min.css" />
 </head>
 
 <body>
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="scroll-tracker"></div>
 
     <!-- Preloader -->
     <div id="preloader" aria-hidden="true">
@@ -90,8 +90,8 @@
                 </div>
             </section>
             <section class="image-showcase" aria-label="Clothing design gallery" id="clothing-showcase">
-                <h2 class="page-title__title">T-Shirt</h2>
-                <div class="masonry-container clothing-showcase">
+                <!-- <h2 class="page-title__title">T-Shirt</h2> -->
+                <div class="grid-container clothing-showcase">
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/1.png" alt="Clothing design 1"
                             loading="lazy" decoding="async" /></div>
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/2.png" alt="Clothing design 2"
@@ -131,8 +131,8 @@
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/19.png" alt="Clothing design 19"
                             loading="lazy" decoding="async" /></div>
                 </div>
-                <h2 class="page-title__title">Baby Tees</h2>
-                <div class="masonry-container clothing-showcase">
+                <!-- <h2 class="page-title__title">Baby Tees</h2> -->
+                <div class="grid-container clothing-showcase">
 
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/baby tees 1.png" alt="Baby Tee 1"
                             loading="lazy" decoding="async" /></div>
@@ -141,8 +141,8 @@
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/baby tees 3.png" alt="Baby Tee 3"
                             loading="lazy" decoding="async" /></div>
                 </div>
-                <h2 class="page-title__title">Hoddie</h2>
-                <div class="masonry-container clothing-showcase">
+                <!-- <h2 class="page-title__title">Hoddie</h2> -->
+                <div class="grid-container clothing-showcase">
 
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/hoddie 1.png" alt="Hoddie 1"
                             loading="lazy" decoding="async" /></div>
@@ -153,8 +153,8 @@
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/hoddie 4.png" alt="Hoddie 4"
                             loading="lazy" decoding="async" /></div>
                 </div>
-                <h2 class="page-title__title">Lower</h2>
-                <div class="masonry-container clothing-showcase">
+                <!-- <h2 class="page-title__title">Lower</h2> -->
+                <div class="grid-container clothing-showcase">
 
                     <div class="image-item"><img src="assets/img/CLOTHING DESIGN/lower 1.png" alt="Lower 1"
                             loading="lazy" decoding="async" /></div>
@@ -184,7 +184,9 @@
             </div>
         </div>
         <div class="footer-rights">
-            <p>&copy; 2024 HEIF Artist. All rights reserved.</p>
+            <p>&copy; 2024 <a href="https://www.instagram.com/himalay.heif" target="_blank" rel="noopener noreferrer"
+                    class="footer-brand-link">HEIF</a> Artist. All rights
+                reserved.</p>
             <p class="developer-credit">
                 Enhanced & Optimized by
                 <a href="https://jayeshmepani.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Jayesh
@@ -193,8 +195,6 @@
         </div>
     </footer>
 
-    <script src="assets/vendor/jquery.min.js"></script>
-    <script src="assets/vendor/jquery.justifiedGallery.min.js"></script>
     <script>
         window.addEventListener("load", function () {
             const preloader = document.getElementById("preloader");
@@ -202,19 +202,6 @@
             setTimeout(() => {
                 preloader.style.display = "none";
             }, 500);
-        });
-
-        // Initialize Justified Gallery
-        $(document).ready(function () {
-            $(".masonry-container").justifiedGallery({
-                rowHeight: 350,
-                maxRowHeight: 800,
-                justifyThreshold: 0.1,
-                margins: 15,
-                border: 0,
-                lastRow: "center",
-                captions: false,
-            });
         });
     </script>
 </body>
