@@ -132,10 +132,11 @@ const Scene3D = {
       );
     };
     this.stars = [
-      createStars(1500, 0.05, 80, 0.9),
-      createStars(1100, 0.07, 120, 0.6),
-      createStars(500, 0.11, 150, 0.31),
-      createStars(150, 0.20, 300, 0.2),
+      createStars(3000, 0.05, 80, 0.9),
+      createStars(2000, 0.07, 120, 0.6),
+      createStars(777, 0.11, 160, 0.31),
+      createStars(75, 0.17, 320, 0.17),
+      createStars(15, 0.2, 800, 0.05),
     ];
     this.scene.add(...this.stars);
   },
