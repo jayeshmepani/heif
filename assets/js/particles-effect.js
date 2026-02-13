@@ -92,7 +92,7 @@ const Scene3D = {
   createObjects() {
     // Generate a soft circle texture to replace default square points
     const circleTexture = (() => {
-      const size = 64;
+      const size = 69;
       const cnv = document.createElement('canvas');
       cnv.width = size;
       cnv.height = size;
@@ -126,15 +126,16 @@ const Scene3D = {
           sizeAttenuation: true,
           map: circleTexture,
           alphaMap: circleTexture,
-          depthWrite: false,
+          depthWrite: true,
           blending: THREE.AdditiveBlending,
         }),
       );
     };
     this.stars = [
       createStars(1500, 0.05, 80, 0.9),
-      createStars(1000, 0.07, 120, 0.6),
-      createStars(500, 0.10, 150, 0.3),
+      createStars(1100, 0.07, 120, 0.6),
+      createStars(500, 0.11, 150, 0.31),
+      createStars(150, 0.20, 300, 0.2),
     ];
     this.scene.add(...this.stars);
   },
