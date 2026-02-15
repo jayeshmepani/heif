@@ -2650,3 +2650,10 @@ footer.footer {
     stroke-linejoin: round;
     stroke-width: 2px;
 }
+
+#anim-logo-h {
+    width: 80px;
+    height: auto;
+    scale: 2;
+    margin: 0 0 -1rem 2.5rem;
+}

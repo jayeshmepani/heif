@@ -25,28 +25,42 @@ main {
     text-align: center
 }
 
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 .profile-pic {
+    --conical-gradient: conic-gradient(from var(--border-angle),
+            ghostwhite, var(--mix-code),
+            ghostwhite, var(--mix-code),
+            ghostwhite, var(--mix-code),
+            ghostwhite);
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
     margin: 0 auto 20px;
-    border: 3px solid var(--mix-code);
+    border: 3px solid transparent;
     box-shadow: 0 0 30px rgba(30, 194, 77, .4);
-    animation: profilePop .8s cubic-bezier(.175, .885, .32, 1.275) forwards;
-    opacity: 0
+    opacity: 0;
+    border-image-slice: 1;
+    background: var(--conical-gradient);
+    background-origin: border-box;
+    background-clip: border-box;
+    opacity: 1;
+    animation: border-angle-rotate 3.33s infinite linear;
 }
 
-@keyframes profilePop {
-    0% {
-        opacity: 0;
-        transform: scale(.5) translateY(-20px)
+@keyframes border-angle-rotate {
+    from {
+        --border-angle: 0deg;
     }
 
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0)
+    to {
+        --border-angle: 360deg;
     }
 }
 
