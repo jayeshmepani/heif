@@ -9,6 +9,10 @@ body {
     overflow-x: hidden
 }
 
+main {
+    margin: 0 !important;
+}
+
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -16,8 +20,8 @@ body {
 }
 
 .profile-section {
-    margin-bottom: 50px;
-    margin-top: 116px;
+    margin-bottom: 20px;
+    margin-top: 96px;
     text-align: center
 }
 
@@ -85,7 +89,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
     gap: 15px
 }
 
@@ -251,4 +255,10 @@ body {
     .name {
         font-size: 24px
     }
+}
+
+.wil-content {
+    min-height: 80cqh;
+    display: flex;
+    align-items: center;
 }

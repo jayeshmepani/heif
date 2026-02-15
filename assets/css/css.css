@@ -926,15 +926,15 @@ body {
 }
 
 .contact-section {
-    padding: 100px 20px;
-    margin-top: 100px;
+    padding: 8rem 20px;
+    margin-top: 8rem;
     text-align: center;
     background-color: transparent;
     position: relative;
     z-index: 2;
     min-height: 60vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column
 }
@@ -1008,7 +1008,8 @@ body {
     }
 
     .contact-section {
-        padding: 50px 20px
+        padding: 20px;
+        margin-top: 88px;
     }
 
     .contact-title {
@@ -1882,7 +1883,7 @@ footer.footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .about-name {
