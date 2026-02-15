@@ -85,7 +85,7 @@
 			<div class="about-layout">
 				<!-- Left: Portrait -->
 				<div class="about-portrait">
-					<picture>
+					<picture id="about-img">
 						<source media="(max-width: 768px)" srcset="assets/img/about-mobile.jpeg">
 						<img src="assets/img/about-profile.jpg" alt="Himalay Hirani portrait" loading="lazy"
 							decoding="async">
@@ -95,12 +95,21 @@
 				<!-- Right: Bio + Skills -->
 				<div class="about-right">
 					<h1 id="about-heading" class="about-name">HIRANI<br>HIMALAY</h1>
-					<p class="about-tagline">Just Keep Scrolling! How To Design Lengthy, Lengthy Pages</p>
+					<p class="about-tagline">Visual Storytelling Through Design & Motion</p>
 
-					<p class="about-bio-text">My name is Himalay Hirani, aka Realism Believer. Below you will find
-						some of my favorite designs. Some of these my best's photo editing works, and others are
-						just passion projects. If you'd like to work together please shoot me an email and we can
-						discuss your next project.</p>
+					<p class="about-bio-text">Hello! I’m Himalay Hirani, a passionate Graphic Designer, Photographer,
+						and Video Editor from Kutch, now based in Ahmedabad, India.
+						With over 5 years of experience in creative design, VFX, and media
+						production.
+					</br>
+					</br>
+						I specialize in transforming visuals into compelling stories. From detailed
+						photo manipulations to cinematic video edits, my goal is to make every
+						project visually impactful and memorable.
+						Having completed a Degree in Media Graphics & Animation, I
+						continuously explore new design trends, software tools, and creative
+						techniques to push artistic boundaries.
+					</p>
 
 					<div class="about-cta">
 						<a class="button" href="work.html">
@@ -280,6 +289,26 @@
 			const preloader = document.getElementById('preloader');
 			preloader.style.opacity = '0';
 			setTimeout(() => { preloader.style.display = 'none'; }, 500);
+		});
+
+		// Skill bars — animate on scroll into view
+		// Observe parent .about-skill (has real dimensions) instead of .skill-fill (scaleX(0) = zero width)
+		const skills = document.querySelectorAll('.about-skill');
+		const skillObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const fill = entry.target.querySelector('.skill-fill');
+					if (fill) fill.classList.add('in-view');
+					skillObserver.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.3 });
+
+		skills.forEach((skill, i) => {
+			// Stagger each bar with a CSS transition-delay
+			const fill = skill.querySelector('.skill-fill');
+			if (fill) fill.style.transitionDelay = `${i * 0.12}s`;
+			skillObserver.observe(skill);
 		});
 	</script>
 </body>
