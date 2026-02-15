@@ -85,7 +85,11 @@
 			<div class="about-layout">
 				<!-- Left: Portrait -->
 				<div class="about-portrait">
-					<img src="assets/img/about-profile.jpg" alt="Himalay Hirani portrait" loading="lazy">
+					<picture>
+						<source media="(max-width: 768px)" srcset="assets/img/about-mobile.jpeg">
+						<img src="assets/img/about-profile.jpg" alt="Himalay Hirani portrait" loading="lazy"
+							decoding="async">
+					</picture>
 				</div>
 
 				<!-- Right: Bio + Skills -->

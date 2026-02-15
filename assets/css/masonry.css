@@ -21,13 +21,22 @@
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.image-item img,
+.image-item>img,
 .video-item video,
 .video-thumbnail img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 12px
+}
+
+/* Don't let hover transform interfere with comparison sliders */
+.image-item:has(.compare):hover {
+    transform: none;
+}
+
+.image-item:has(.compare)::before {
+    display: none;
 }
 
 .video-item {
@@ -75,10 +84,12 @@
     margin: auto;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
 
     .image-item,
     .video-item {
         width: 367px;
+        /* margin: 2rem; */
     }
 }
 

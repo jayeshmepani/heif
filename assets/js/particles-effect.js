@@ -124,17 +124,17 @@ const Scene3D = {
           transparent: true,
           opacity,
           sizeAttenuation: true,
-          map: circleTexture,
+          // map: circleTexture,
           alphaMap: circleTexture,
-          depthWrite: true,
+          // depthWrite: true,
           blending: THREE.AdditiveBlending,
         }),
       );
     };
     this.stars = [
-      createStars(3000, 0.05, 80, 0.9),
-      createStars(2000, 0.07, 120, 0.6),
-      createStars(777, 0.11, 160, 0.31),
+      createStars(2000, 0.05, 80, 0.41),
+      createStars(1500, 0.07, 120, 0.41),
+      createStars(777, 0.13, 160, 0.3),
       createStars(75, 0.17, 320, 0.17),
       createStars(15, 0.2, 800, 0.05),
     ];
