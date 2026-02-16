@@ -153,6 +153,7 @@
     --primary: hsl(113, 71%, 49%);
     --mix: color-mix(in srgb, var(--primary), var(--emerald));
     --mix-code: rgb(30, 194, 77);
+    --mix-code-hsl: hsl(137, 73%, 37%);
 }
 
 * {
@@ -1105,11 +1106,11 @@ body {
     }
 }
 
-@media (max-width:500px) {
+/* @media (max-width:500px) {
     .portfolio-container {
         grid-template-columns: repeat(1, 1fr)
     }
-}
+} */
 
 .image-showcase {
     padding: 1rem;
@@ -1739,12 +1740,12 @@ footer.footer {
 }
 
 .about-portrait :is(img, source) {
-    width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
-    max-height: 850px;
+    max-height: 500px;
     border-radius: 12px;
+    margin: auto;
 }
 
 /* Right column */
@@ -1776,10 +1777,10 @@ footer.footer {
 }
 
 .about-bio-text {
-    font-size: 0.95rem;
+    font-size: clamp(12px, 1vw, 16px);
     color: #bbb;
-    line-height: 1.8;
-    max-width: 540px;
+    line-height: 1.5;
+    /* max-width: 540px; */
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1836,7 +1837,7 @@ footer.footer {
 .skill-fill {
     height: 100%;
     border-radius: 6px;
-    background: linear-gradient(90deg, var(--mix-code), #2dd4bf, var(--mix-code));
+    background: linear-gradient(90deg, var(--mix-code-hsl), #2dd4bf, var(--mix-code-hsl));
     background-size: 200% 100%;
     transform: scaleX(0);
     transform-origin: left;
