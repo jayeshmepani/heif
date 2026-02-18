@@ -21,17 +21,60 @@ function showControls(i) {
   }, 700);
 }
 
-function loadVideosInBackground() {
+// Lazy load videos using IntersectionObserver
+function lazyLoadVideos() {
+  const videoObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        if (!video.querySelector("source") && video.getAttribute("data-src")) {
+          const source = document.createElement("source");
+          source.src = video.getAttribute("data-src");
+          source.type = "video/mp4";
+          video.appendChild(source);
+          video.load();
+          // Optimization: Start buffering aggressively once in view
+          video.preload = "auto";
+          observer.unobserve(video);
+          setupVideoLoadingState(video);
+        }
+      }
+    });
+  }, {
+    rootMargin: "200px 0px", // Load videos 200px before they appear
+    threshold: 0.1
+  });
+
   document.querySelectorAll("video[data-src]").forEach((video) => {
-    if (!video.querySelector("source")) {
-      const source = document.createElement("source");
-      source.src = video.getAttribute("data-src");
-      source.type = "video/mp4";
-      video.appendChild(source);
-      video.load();
-    }
+    videoObserver.observe(video);
   });
 }
+
+function setupVideoLoadingState(video) {
+  const wrapper = video.closest(".video-item");
+  const playBtn = wrapper.querySelector(".play-btn");
+
+  if (!playBtn) return;
+
+  video.addEventListener("waiting", () => {
+    playBtn.classList.add("loading");
+  });
+
+  video.addEventListener("playing", () => {
+    playBtn.classList.remove("loading");
+  });
+
+  video.addEventListener("canplay", () => {
+    playBtn.classList.remove("loading");
+  });
+
+  // Clean up if error occurs
+  video.addEventListener("error", () => {
+    playBtn.classList.remove("loading");
+  });
+}
+
+window.addEventListener("load", lazyLoadVideos);
 
 function togglePlay(e) {
   var t = document.getElementById(e),
@@ -126,4 +169,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-window.addEventListener("load", loadVideosInBackground);
+
