@@ -10,7 +10,8 @@ body {
 }
 
 main {
-    margin: 0 !important;
+    /* margin: 0 !important; */
+    padding-block: 2rem 4rem;
 }
 
 .container {
@@ -20,8 +21,8 @@ main {
 }
 
 .profile-section {
-    margin-bottom: 20px;
-    margin-top: 96px;
+    /* margin-bottom: 20px; */
+    /* margin-top: 96px; */
     text-align: center
 }
 

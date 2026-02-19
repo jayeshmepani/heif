@@ -264,7 +264,12 @@ h1:not(.hero h1, #profile-heading) {
     backdrop-filter: blur(10px);
     transition: all .4s cubic-bezier(.175, .885, .32, 1.275);
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+
+    img,
+    svg {
+        max-width: 18px;
+    }
 }
 
 .role-badge::before {
@@ -397,26 +402,26 @@ body {
     margin: 0;
     padding: 0;
     background-attachment: scroll;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     isolation: isolate;
     z-index: 9999;
     position: relative;
 }
 
-main {
+/* main {
     margin-bottom: 3.5rem;
-}
+} */
 
-footer {
+/* footer {
     margin-top: 3.5rem !important;
-}
+} */
 
 @media (max-width:768px) {
 
     html,
     body {
-        overflow-x: hidden;
-        width: 100%
+        /* overflow-x: hidden; */
+        width: 100%;
     }
 
     /* .hero h1 {
@@ -505,7 +510,7 @@ header {
     justify-content: space-between;
     padding: 15px;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 0;
     background: hsla(0, 0%, 4%, 0.5);
     -webkit-backdrop-filter: blur(2px);
@@ -562,8 +567,7 @@ header nav ul li a:hover::after {
 
 .hero {
     text-align: left;
-    padding: 90px 0;
-    padding-top: 100px;
+    padding: 30px 0;
     padding-left: 30px;
     background-color: transparent;
     position: relative;
@@ -963,13 +967,13 @@ body {
 }
 
 .contact-section {
-    padding: 8rem 20px;
-    margin-top: 8rem;
+    /* padding: 8rem 20px; */
+    /* margin-top: 8rem; */
     text-align: center;
     background-color: transparent;
     position: relative;
     z-index: 2;
-    min-height: 60vh;
+    /* min-height: 60vh; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -1094,10 +1098,10 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    margin-top: calc(100px + 6rem);
+    /* margin-top: calc(100px + 6rem); */
 
     #home-page & {
-        margin-top: 100px;
+        margin-block: 50px;
     }
 }
 
@@ -1262,7 +1266,7 @@ body {
     background: linear-gradient(180deg, hsla(0, 0%, 2%, 0.7), hsla(0, 0%, 0%, 0.7));
     backdrop-filter: blur(2px);
     color: #fff;
-    padding: 20px 30px;
+    padding: 16px 30px;
     margin-top: 0;
     border-top: 1px solid rgba(255, 255, 255, .05);
     position: relative;
@@ -1287,7 +1291,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, .05);
 
     @media (width < 768px) {
@@ -1296,14 +1300,21 @@ body {
 }
 
 .footer-logo-container {
-    flex: 1
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display: contents;
+    }
 }
 
 .footer-logo-container img {
-    width: 120px;
-    opacity: .7;
+    width: 100px;
+    opacity: .5;
     transition: all .3s ease;
-    filter: grayscale(100%)
+    filter: grayscale(100%);
 }
 
 .footer-logo-container img:hover {
@@ -1384,7 +1395,7 @@ body {
 
 .footer-social-media {
     flex: 1;
-    text-align: right;
+    /* text-align: right; */
 
     @media (width < 768px) {
         display: none;
@@ -1424,9 +1435,9 @@ body {
 
 .footer-rights {
     text-align: center;
-    margin-block: 10px -10px;
+    margin-block: 9px -9px;
     color: #333;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 1px
 }
 
@@ -1437,8 +1448,8 @@ body {
 }
 
 .developer-credit {
-    margin-top: 5px;
-    font-size: 10px;
+    margin-top: 4px;
+    font-size: 9px;
     color: #444
 }
 
@@ -1453,16 +1464,18 @@ body {
 }
 
 .footer-rights p {
-    transition: color .3s ease
+    /* transition: color .3s ease; */
+    color: #555
+
 }
 
-.footer-rights:hover p {
+/* .footer-rights:hover p {
     color: #555
-}
+} */
 
 @media (max-width:768px) {
     .footer {
-        padding: 15px;
+        padding: 14px;
     }
 
     .footer-container {
@@ -1747,11 +1760,14 @@ header nav ul li a:hover {
 }
 
 main#main-content {
-    flex: 1 0 auto;
+    /* flex: 1 0 auto; */
+    margin-block: auto 0;
+    padding-bottom: 2rem;
 }
 
 footer.footer {
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    margin-block: auto 0;
 }
 
 .page-wrap {
@@ -1760,7 +1776,7 @@ footer.footer {
 
 /* About section — reference layout */
 .about-section {
-    padding: 120px 60px 60px;
+    padding: 60px;
     color: #fff;
 }
 
