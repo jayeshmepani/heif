@@ -817,7 +817,7 @@ body {
 
 .image-overlay {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     padding: 15px;
@@ -833,7 +833,7 @@ body {
 }
 
 .image-item:hover .image-overlay {
-    transform: translateY(0);
+    transform: translateY(1px);
 }
 
 .image-overlay-text {
@@ -2570,7 +2570,7 @@ footer.footer {
 
 /* Comparison Slider Styles */
 .compare {
-    --mask-width: 50%;
+    --mask-width: 30%;
     --handle-size: 32px;
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.05);
