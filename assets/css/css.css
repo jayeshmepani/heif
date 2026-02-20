@@ -265,6 +265,7 @@ h1:not(.hero h1, #profile-heading) {
     transition: all .4s cubic-bezier(.175, .885, .32, 1.275);
     position: relative;
     overflow: hidden;
+    max-width: fit-content !important;
 
     img,
     svg {
@@ -292,6 +293,7 @@ h1:not(.hero h1, #profile-heading) {
 }
 
 .role-badge:hover {
+    max-width: fit-content !important;
     background: rgba(30, 194, 77, .15);
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 15px 40px rgba(30, 194, 77, .3);
@@ -573,9 +575,9 @@ header nav ul li a:hover::after {
     position: relative;
     z-index: 10;
 
-    @media (width<768px) {
+    /* @media (width<768px) {
         margin-top: 3rem;
-    }
+    } */
 }
 
 .hero h1 {
@@ -962,9 +964,8 @@ body {
 
 .page-title__title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 8vw, 60px);
-    margin-bottom: 40px;
-    margin-top: 110px;
+    font-size: clamp(2.1rem, 8vw, 60px);
+    margin-block: 40px;
     text-transform: uppercase;
     font-weight: normal;
     line-height: 1;
@@ -1200,7 +1201,7 @@ body {
 
 .hero p {
     font-size: 1.5em;
-    margin: 20px 0;
+    margin: 10px 0;
 
     @media (width<786px) {
         font-size: clamp(12px, 2vw, 15px);
@@ -1470,7 +1471,6 @@ body {
 .footer-rights p {
     /* transition: color .3s ease; */
     color: #555
-
 }
 
 /* .footer-rights:hover p {
@@ -1647,7 +1647,7 @@ header nav ul li a:hover {
 
 @media (max-width:768px) {
     header {
-        position: fixed;
+        /* position: fixed; */
         background: hsla(0, 0%, 4%, 0.9);
         /* Darker background on mobile for better visibility when scrolling */
     }
@@ -2560,6 +2560,17 @@ footer.footer {
     align-items: center;
     gap: 8px;
     padding: 1rem 0 0;
+
+    &:hover {
+        text-decoration: underline;
+
+        .yt-icon {
+            fill: rgb(194 30 30);
+            filter: drop-shadow(0 0 10px rgba(194, 30, 30, 0.5));
+            transition: all 0.4s ease-in-out;
+            text-decoration: underline; 
+        }
+    }
 }
 
 .yt-icon {
