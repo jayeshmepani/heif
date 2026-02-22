@@ -139,7 +139,6 @@ main#main-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 80px clamp(24px, 8vw, 10vw); */
     position: relative;
     box-sizing: border-box
 }
@@ -229,7 +228,7 @@ main#main-content {
 .sec-ps .tool-divider,
 .sec-ae .tool-divider,
 .sec-dr .tool-divider {
-    margin-inline: auto 0;
+    margin-inline: auto 0
 }
 
 .showcase-h1 {
@@ -390,7 +389,6 @@ main#main-content {
 
 @container showcase-bounds (max-width:768px) {
     .scroll-content section {
-        /* min-height: 85vh; */
         padding: 80px 20px 40px;
         justify-content: center !important;
         align-items: center
@@ -410,7 +408,7 @@ main#main-content {
         :scope section .text-block {
             margin-inline: auto !important;
             text-align: center;
-            width: 90%;
+            width: 90%
         }
 
         .tool-meta {
@@ -422,7 +420,7 @@ main#main-content {
         }
 
         .tool-divider {
-            margin-inline: auto;
+            margin-inline: auto
         }
     }
 
@@ -521,40 +519,34 @@ main#main-content {
         animation: text-reveal-scroll ease both;
         animation-range: cover 0% cover 100%;
         opacity: 0;
-
-        /* OVERRIDE NORMAL DOM FLOW - LOCK TO THE ENTIRE SCREEN */
         position: fixed;
         top: 50%;
         translate: 0 -50%;
-        /* Perfect Y-Axis Center */
         inset-inline: clamp(24px, 8vw, 10vw);
-        /* Lock bounds back to layout container widths manually */
         margin: 0;
         z-index: 10;
         pointer-events: none;
-        /* Prevent ghost blocks absorbing scroll clicks */
 
         @media (width<768px) {
-            translate: 0 -33.33%;
+            translate: 0 -33.33%
         }
     }
 
-    /* Re-enable clicking on CTA buttons specifically inside fixed cards that are active */
     .text-block * {
-        pointer-events: auto;
+        pointer-events: auto
     }
 
     .sec-intro .text-block,
     .sec-ai .text-block,
     .sec-pr .text-block,
     .sec-fcp .text-block {
-        margin-inline: 0 auto !important;
+        margin-inline: 0 auto !important
     }
 
     .sec-ps .text-block,
     .sec-ae .text-block,
     .sec-dr .text-block {
-        margin-inline: auto 0 !important;
+        margin-inline: auto 0 !important
     }
 
     .sec-intro .text-block {
@@ -630,17 +622,17 @@ main#main-content {
 
         0%,
         33% {
-            opacity: 0;
+            opacity: 0
         }
 
         45%,
         55% {
-            opacity: 1;
+            opacity: 1
         }
 
         70%,
         100% {
-            opacity: 0;
+            opacity: 0
         }
     }
 
@@ -648,12 +640,12 @@ main#main-content {
 
         0%,
         55% {
-            opacity: 1;
+            opacity: 1
         }
 
         75%,
         100% {
-            opacity: 0;
+            opacity: 0
         }
     }
 
@@ -662,33 +654,32 @@ main#main-content {
 
             0%,
             55% {
-                opacity: 1;
+                opacity: 1
             }
 
             60%,
             100% {
-                opacity: 0;
+                opacity: 0
             }
         }
     }
-
 
     @media (width<768px) {
         @keyframes text-reveal-scroll {
 
             0%,
             45% {
-                opacity: 0;
+                opacity: 0
             }
 
             50%,
             65% {
-                opacity: 1;
+                opacity: 1
             }
 
             75%,
             100% {
-                opacity: 0;
+                opacity: 0
             }
         }
     }
@@ -712,7 +703,7 @@ main#main-content {
             translate: -50% -50% 0px;
             scale: 1.05;
             opacity: 1;
-            rotate: 0deg;
+            rotate: 0deg
         }
 
         75%,
@@ -723,7 +714,7 @@ main#main-content {
             scale: .33;
             opacity: 0;
             rotate: -15deg;
-            perspective: 1000px;
+            perspective: 1000px
         }
     }
 
@@ -754,7 +745,6 @@ main#main-content {
             top: -20vh;
             left: 60%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: 10deg
@@ -768,7 +758,6 @@ main#main-content {
             top: 110vh;
             left: 50%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: -5deg
@@ -789,7 +778,6 @@ main#main-content {
             top: -20vh;
             left: 40%;
             translate: -50% -50% -222px;
-
             scale: .3;
             opacity: 0;
             rotate: 15deg
@@ -803,7 +791,6 @@ main#main-content {
             top: 110vh;
             left: 50%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: 10deg
@@ -824,7 +811,6 @@ main#main-content {
             top: -20vh;
             left: 60%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: -10deg
@@ -838,7 +824,6 @@ main#main-content {
             top: 110vh;
             left: 50%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: -10deg
@@ -859,7 +844,6 @@ main#main-content {
             top: -20vh;
             left: 40%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: 15deg
@@ -893,7 +877,6 @@ main#main-content {
             top: -20vh;
             left: 60%;
             translate: -50% -50% -222px;
-
             scale: .33;
             opacity: 0;
             rotate: -5deg
@@ -908,10 +891,9 @@ main#main-content {
         }
     }
 
-    @container showcase-bounds (max-width: 768px) {
+    @container showcase-bounds (max-width:768px) {
         .text-block {
-            /* inset-inline: clamp(24px, 5vw, 36px); */
-            margin-inline: auto !important;
+            margin-inline: auto !important
         }
     }
 }
