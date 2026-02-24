@@ -24,7 +24,13 @@
   <link rel="stylesheet" href="assets/css/css.css" />
   <link rel="stylesheet" href="assets/css/cursor.css" />
   <script src="assets/vendor/three.min.js" defer></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
+  <!-- 3D Scripts -->
+  <script src="assets/js/hero1-3d.js" defer></script>
+  <script src="assets/js/hero-3d.js" defer></script>
+  <script src="assets/js/ae-3d.js" defer></script>
+
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="assets/js/script.js" defer></script>
@@ -68,60 +74,58 @@
   </header>
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-heading">
+      <div id="hero-3d-model" aria-hidden="true"></div>
       <h1 id="hero-heading" class="reveal">
         HI! I'M <br />HIMALAY <br /><span style="display: block">DESIGNER,</span><br style="display: contents" /><span
           style="display: block">EDITOR</span>
       </h1>
       <p class="contact-info reveal" style="transition-delay: 0.2s; display: flex; flex-direction: column;">
-        <span class="text-trim">+91 9313113583</span>
+        <span class="text-trim"><a href="tel:+919313113583" style="color: white;">+91 9313113583</a></span>
         <span>HEIF – <a href="https://maps.app.goo.gl/uYJQntNhiBuWUcR98" target="_blank" rel="noopener noreferrer"
-            style="color: white;">BALADIYA</a>, KUTCH</span>
+            style="color: white;">BALADIYA, KUTCH</a></span>
       </p>
     </section>
 
-    <section class="hero1">
-      <h2 id="heif" class="reveal">EXPERIENCE THE</h2></br>
-      <h2 id="hei" class="reveal" style="transition-delay: 0.1s">
-        ARTISTRY OF
-      </h2>
-      <h2 class="reveal" style="transition-delay: 0.2s">
-        <span class="hover-text">HEIF:</span></br>
-      </h2></br>
-      <h2 class="reveal" style="transition-delay: 0.3s">
-        <span class="hover-text">TRANSFORMING</span>
-      </h2>
-      <h2 id="he" class="reveal" style="transition-delay: 0.4s">YOUR</h2></br>
-      <h2 id="h" class="reveal" style="transition-delay: 0.5s">
-        VISUALS INTO
-      </h2></br>
-      <h2 class="reveal" style="transition-delay: 0.6s">
-        <span class="hover-text">MASTERPIECE</span></br>
-      </h2>
-      <div class="role-badges reveal" style="transition-delay: 0.7s">
-        <span class="role-badge">
-          <img src="assets/ICONS WEB/graphic design button.svg" alt="" style="margin-right: 8px;" loading="lazy"
-            decoding="async">
-          Graphic Designer
-        </span>
-        <span class="role-badge">
-          <img src="assets/ICONS WEB/video editing button.svg" alt="" style="margin-right: 8px;" loading="lazy"
-            decoding="async">
-          Video Editor
-        </span>
-        <span class="role-badge">
-          <img src="assets/ICONS WEB/photo editing.svg" alt="" style="margin-right: 8px;" loading="lazy"
-            decoding="async">
-          Photo Editor
-        </span>
-      </div>
-      <div class="hover-image" id="hover-image-1" aria-hidden="true">
-        <img src="assets/img/heif-hover.jpg" alt="Tattoo Image 1" loading="lazy" decoding="async" />
-      </div>
-      <div class="hover-image" id="hover-image-2" aria-hidden="true">
-        <img src="assets/img/thumbnail/TRANSFORMING.jpg" alt="Tattoo Image 2" loading="lazy" decoding="async" />
-      </div>
-      <div class="hover-image" id="hover-image-3" aria-hidden="true">
-        <img src="assets/img/masterpiece-hover.jpg" alt="Tattoo Image 3" loading="lazy" decoding="async" />
+    <section class="hero1" style="position: relative;">
+      <!-- Isolated 3D Container for After Effects Logo directly in the section it scrolls with -->
+      <div id="ae-3d-model"
+        style="position: absolute; inset: auto; translate: -60% 50%; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></div>
+
+      <div class="hero1-parallax-wrapper">
+        <h2 id="heif" class="reveal">EXPERIENCE THE</h2></br>
+        <h2 id="hei" class="reveal" style="transition-delay: 0.1s">
+          ARTISTRY OF
+        </h2>
+        <h2 class="reveal" style="transition-delay: 0.2s">
+          <span class="hover-text">HEIF:</span></br>
+        </h2></br>
+        <h2 class="reveal" style="transition-delay: 0.3s">
+          <span class="hover-text">TRANSFORMING</span>
+        </h2>
+        <h2 id="he" class="reveal" style="transition-delay: 0.4s">YOUR</h2></br>
+        <h2 id="h" class="reveal" style="transition-delay: 0.5s">
+          VISUALS INTO
+        </h2></br>
+        <h2 class="reveal" style="transition-delay: 0.6s">
+          <span class="hover-text">MASTERPIECE</span></br>
+        </h2>
+        <div class="role-badges reveal" style="transition-delay: 0.7s">
+          <span class="role-badge">
+            <img src="assets/ICONS WEB/graphic design button.svg" alt="" style="margin-right: 8px;" loading="lazy"
+              decoding="async">
+            Graphic Designer
+          </span>
+          <span class="role-badge">
+            <img src="assets/ICONS WEB/video editing button.svg" alt="" style="margin-right: 8px;" loading="lazy"
+              decoding="async">
+            Video Editor
+          </span>
+          <span class="role-badge">
+            <img src="assets/ICONS WEB/photo editing.svg" alt="" style="margin-right: 8px;" loading="lazy"
+              decoding="async">
+            Photo Editor
+          </span>
+        </div>
       </div>
     </section>
 
@@ -210,6 +214,18 @@
       }, 100);
     });
   </script>
+  <!-- Abstracted section popups (Must be on relative body so 3D transforms on .hero1 don't break strict X/Y mouse positioning) -->
+  <div class="hover-image" id="hover-image-1" aria-hidden="true">
+    <img src="assets/img/heif-hover.jpg" alt="Tattoo Image 1" loading="lazy" decoding="async" />
+  </div>
+  <div class="hover-image" id="hover-image-2" aria-hidden="true">
+    <img src="assets/img/thumbnail/TRANSFORMING.jpg" alt="Tattoo Image 2" loading="lazy" decoding="async" />
+  </div>
+  <div class="hover-image" id="hover-image-3" aria-hidden="true">
+    <img src="assets/img/masterpiece-hover.jpg" alt="Tattoo Image 3" loading="lazy" decoding="async" />
+  </div>
+
+  <script src="assets/js/hero1-3d.js"></script>
 </body>
 
 </html>
