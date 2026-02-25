@@ -528,7 +528,7 @@ header nav ul li a:hover::after {
 }
 
 .hero h1 {
-    font-size: min(185px, 20vw);
+    font-size: min(160px, 17vw);
     font-weight: 500;
     line-height: .8;
     opacity: 0;
@@ -1640,8 +1640,8 @@ header nav ul li a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100dvw;
+    height: 100dvh;
     z-index: -2;
     pointer-events: none;
     overflow: hidden;
@@ -1691,7 +1691,8 @@ header nav ul li a:hover {
 
 main#main-content {
     margin-block: auto 0;
-    padding-bottom: 2rem
+    padding-bottom: 2rem;
+    overflow-x: hidden;
 }
 
 footer.footer {
@@ -2588,10 +2589,10 @@ footer.footer {
 
 #hero-3d-model {
     position: absolute;
-    right: -30%;
-    left: 30%;
-    top: -30%;
-    bottom: auto;
+    right: -20%;
+    left: 20%;
+    top: -25%;
+    bottom: 0;
     z-index: 10;
     pointer-events: none;
 }
@@ -2609,7 +2610,7 @@ footer.footer {
         top: auto;
         transform: translateX(-50%);
         width: 100vw;
-        height: 60vh;
-        opacity: 0.4;
+        height: 55vh;
+        opacity: 0.6;
     }
 }

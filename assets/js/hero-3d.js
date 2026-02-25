@@ -100,13 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (width < 768) {
                 // Mobile
-                heroModel.scale.set(9, 9, 9);
+                heroModel.scale.set(8, 8, 8);
             } else if (width < 1024) {
                 // Tablet
-                heroModel.scale.set(13, 13, 13);
+                heroModel.scale.set(12, 12, 12);
             } else {
                 // Desktop
-                heroModel.scale.set(17, 17, 17);
+                heroModel.scale.set(15, 15, 15);
             }
         }
     }

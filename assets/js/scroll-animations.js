@@ -8,11 +8,16 @@ const lenis = new Lenis({
     touchMultiplier: 1.5,
 });
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// 1. Tell ScrollTrigger to update every time Lenis scrolls
+lenis.on('scroll', ScrollTrigger.update);
+
+// 2. Add Lenis's requestAnimationFrame to GSAP's ticker
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000); // Convert GSAP's time (seconds) to Lenis's time (ms)
+});
+
+// 3. Prevent GSAP from lagging behind the scroll
+gsap.ticker.lagSmoothing(0);
 
 // Intersection Observer for Reveal Animations
 const revealElements = document.querySelectorAll(".reveal");
@@ -20,10 +25,8 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-        } else {
-            // Remove the class when scrolled out of view to allow re-animation on scroll up/down
-            entry.target.classList.remove("visible");
         }
+        // Removed else block to prevent jitter from Intersection Observer thrashing
     });
 }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
