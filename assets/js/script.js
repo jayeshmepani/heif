@@ -12,15 +12,12 @@ hoverTexts.length > 0 &&
         n.style.display = "block";
       }),
       e.addEventListener("mousemove", (e) => {
-        clearTimeout(hoverTimers[t]);
-        n.style.display = "block";
         const l = n.offsetWidth || n.clientWidth;
-        let o = e.pageX - l / 2,
-          i = e.pageY;
+        let o = e.pageX - l / 2;
+        let i = e.pageY + 15; // Offset to prevent cursor overlap
         (o < 8 && (o = 8),
           o + l > window.innerWidth - 8 && (o = window.innerWidth - l - 8),
-          (n.style.left = `${o}px`),
-          (n.style.top = `${i}px`));
+          (n.style.transform = `translate(${o}px, ${i}px)`));
       }),
       e.addEventListener("mouseleave", () => {
         hoverTimers[t] = setTimeout(() => {
